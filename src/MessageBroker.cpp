@@ -1,4 +1,5 @@
 #include <chrono>
+#include <thread>
 
 #include <MessageBroker.h>
 
@@ -56,8 +57,8 @@ bool MessageBroker::SubsriptionExists(std::string& endpoint) {
 
 void MessageBroker::SendMulticast() {
     for (int i=0; i<MULTICAST_TIMES; i++) {
-        _multicast.Notify(_publisherPort);
         std::this_thread::sleep_for(std::chrono::milliseconds(MULTICAST_WAIT));
+        _multicast.Notify(_publisherPort);
     }
 }
 
@@ -72,7 +73,7 @@ void MessageBroker::ProccessMulticast() {
             subscriber->setsockopt(ZMQ_SUBSCRIBE, topic.c_str(), topic.size());
         }
         _subscribers.push_back(std::make_tuple(endpoint, move(subscriber)));
-        SendMulticast();
+        _workSteps = 0;
     }
 }
 
@@ -80,7 +81,6 @@ MessageBroker::MessageBroker(const std::string &groupId, const int threadPoolSiz
     : _groupId(groupId), _context(zmq::context_t(threadPoolSize)), _publisher(_context, ZMQ_PUB),
     _epoch(std::chrono::high_resolution_clock::from_time_t(0)), _workSteps(0) {
     BindPublisherAndLocalSubscriber();
-    SendMulticast();
 }
 
 MessageBroker::~MessageBroker() {}
@@ -107,7 +107,10 @@ void MessageBroker::Subscribe(const std::string &topic, SubscriptionCallback cal
 }
 
 void MessageBroker::DoWork() {
-    ProccessMulticast();
+    if ((_workSteps++) == 0)
+        SendMulticast();
+    else
+        ProccessMulticast();
     ProcessSubscriptions();
 }
 
