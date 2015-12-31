@@ -49,7 +49,7 @@ std::vector<std::string> Multicast::GetNotifications() {
     datalen = sizeof(databuf);
     std::vector<std::string> retVal;
     while(read(_getNotificationsSocket, databuf, datalen) >= 0)
-        retVal.push_back(std::string (databuf));
+        retVal.push_back("tcp://" + std::string (databuf));
     return retVal;
 }
 

@@ -18,8 +18,6 @@ namespace MaxBotMessages {
 #define BROADCAST_PORT          12321
 #define MESSAGE_SIZE            22              //size of ip address + port in the form of 192.168.101.222:99999
 
-
-
 class Multicast {
 public:
     static std::string GetLocalIp() {

@@ -43,25 +43,33 @@
 			<Add directory="include" />
 		</Compiler>
 		<ExtraCommands>
-			<Add before="protoc -I=./MessageDefinition --cpp_out=./src ./MessageDefinition/Stamp.proto" />
-			<Add before="protoc -I=./MessageDefinition --cpp_out=./src ./MessageDefinition/Vector3.proto" />
+			<Add before="protoc -I=./MessageDefinition --cpp_out=./src ./MessageDefinition/Pose.proto" />
 			<Add before="protoc -I=./MessageDefinition --cpp_out=./src ./MessageDefinition/Range.proto" />
+			<Add before="protoc -I=./MessageDefinition --cpp_out=./src ./MessageDefinition/Stamp.proto" />
+			<Add before="protoc -I=./MessageDefinition --cpp_out=./src ./MessageDefinition/Vector.proto" />
+			<Add before="protoc -I=./MessageDefinition --cpp_out=./src ./MessageDefinition/Velocity.proto" />
 			<Add before="mv ./src/*.h ./include" />
 		</ExtraCommands>
+		<Unit filename="MessageDefinition/Pose.proto" />
 		<Unit filename="MessageDefinition/Range.proto" />
 		<Unit filename="MessageDefinition/Stamp.proto" />
-		<Unit filename="MessageDefinition/Vector3.proto" />
+		<Unit filename="MessageDefinition/Vector.proto" />
+		<Unit filename="MessageDefinition/Velocity.proto" />
 		<Unit filename="include/IMessageBroker.h" />
 		<Unit filename="include/MessageBroker.h" />
 		<Unit filename="include/Multicast.h" />
+		<Unit filename="include/Pose.pb.h" />
 		<Unit filename="include/Range.pb.h" />
 		<Unit filename="include/Stamp.pb.h" />
-		<Unit filename="include/Vector3.pb.h" />
+		<Unit filename="include/Vector.pb.h" />
+		<Unit filename="include/Velocity.pb.h" />
 		<Unit filename="src/MessageBroker.cpp" />
 		<Unit filename="src/Multicast.cpp" />
+		<Unit filename="src/Pose.pb.cc" />
 		<Unit filename="src/Range.pb.cc" />
 		<Unit filename="src/Stamp.pb.cc" />
-		<Unit filename="src/Vector3.pb.cc" />
+		<Unit filename="src/Vector.pb.cc" />
+		<Unit filename="src/Velocity.pb.cc" />
 		<Extensions>
 			<code_completion />
 			<debugger />

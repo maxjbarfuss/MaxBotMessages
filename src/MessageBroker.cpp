@@ -1,9 +1,21 @@
-#include <chrono>
-#include <thread>
+#include <string>
 
 #include <MessageBroker.h>
 
 namespace MaxBotMessages {
+
+///static variables
+std::vector<std::string>        MessageBroker::_inProcessPublishers;
+std::mutex                      MessageBroker::_inProcessMutex;
+
+MessageBroker::MessageBroker(const int threadPoolSize)
+    : _context(zmq::context_t(threadPoolSize)), _publisher(_context, ZMQ_PUB),
+    _epoch(std::chrono::high_resolution_clock::from_time_t(0)), _sentMulticast(false), _connectedInProcess(1) {
+    BindPublisherAndLocalSubscriber();
+    SendMulticast();
+}
+
+MessageBroker::~MessageBroker() {}
 
 void MessageBroker::BindPublisherAndLocalSubscriber() {
     srand(time(NULL));
@@ -18,8 +30,10 @@ void MessageBroker::BindPublisherAndLocalSubscriber() {
             subscriber->connect(endpoint);
             _subscribers.push_back(std::make_tuple(endpoint, move(subscriber)));
             success = true;
+            std::lock_guard<std::mutex> lock(_inProcessMutex);
+            _inProcessPublishers.push_back(endpoint);
         }
-        catch (int e) {}
+        catch (zmq::error_t e) {}
     }
     if (!success) throw;
 }
@@ -43,6 +57,18 @@ void MessageBroker::ProcessSubscriptions() {
     }
 }
 
+void MessageBroker::SendMulticast() {
+    std::thread t ( [&]() {
+        for (int i = 1; i <= MULTICAST_TIMES; i++) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(MULTICAST_WAIT * i));
+            _sentMulticast = true;
+            _multicast.Notify(_publisherPort);
+            _sentMulticast = true;
+        }
+    });
+    t.detach();
+}
+
 bool MessageBroker::SubsriptionExists(std::string& endpoint) {
     if (endpoint.substr(endpoint.size() - 5, 5) == std::to_string(_publisherPort)) return true;
     bool found = false;
@@ -55,35 +81,31 @@ bool MessageBroker::SubsriptionExists(std::string& endpoint) {
     return found;
 }
 
-void MessageBroker::SendMulticast() {
-    for (int i=0; i<MULTICAST_TIMES; i++) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(MULTICAST_WAIT));
-        _multicast.Notify(_publisherPort);
-    }
-}
-
-void MessageBroker::ProccessMulticast() {
-    std::vector<std::string> endpoints = _multicast.GetNotifications();
+bool MessageBroker::Subscribe(std::vector<std::string> endpoints) {
+    bool found = false;
     for (auto endpoint : endpoints) {
-        if (SubsriptionExists(endpoint)) return;
+        if (SubsriptionExists(endpoint)) continue;
         std::unique_ptr<zmq::socket_t> subscriber = std::unique_ptr<zmq::socket_t>(new zmq::socket_t(_context, ZMQ_SUB));
-        subscriber->connect("tcp://" + endpoint);
+        subscriber->connect(endpoint);
         for (auto subscription : _subscriptions) {
             std::string& topic = std::get<0>(subscription);
             subscriber->setsockopt(ZMQ_SUBSCRIBE, topic.c_str(), topic.size());
         }
         _subscribers.push_back(std::make_tuple(endpoint, move(subscriber)));
-        _workSteps = 0;
+        found = true;
+    }
+    return found;
+}
+
+void MessageBroker::FindPublishers() {
+    if (_connectedInProcess < _inProcessPublishers.size()) {
+        std::lock_guard<std::mutex> lock(_inProcessMutex);
+        if (Subscribe(_inProcessPublishers))
+            _connectedInProcess = _inProcessPublishers.size();
+    } else if (Subscribe(_multicast.GetNotifications())) {
+            SendMulticast();
     }
 }
-
-MessageBroker::MessageBroker(const std::string &groupId, const int threadPoolSize)
-    : _groupId(groupId), _context(zmq::context_t(threadPoolSize)), _publisher(_context, ZMQ_PUB),
-    _epoch(std::chrono::high_resolution_clock::from_time_t(0)), _workSteps(0) {
-    BindPublisherAndLocalSubscriber();
-}
-
-MessageBroker::~MessageBroker() {}
 
 void MessageBroker::Publish(const std::string &topic, google::protobuf::Message &message) {
     int sz = topic.size();
@@ -107,10 +129,10 @@ void MessageBroker::Subscribe(const std::string &topic, SubscriptionCallback cal
 }
 
 void MessageBroker::DoWork() {
-    if ((_workSteps++) == 0)
-        SendMulticast();
+    if (!_sentMulticast)
+        FindPublishers();
     else
-        ProccessMulticast();
+        _sentMulticast = false;
     ProcessSubscriptions();
 }
 

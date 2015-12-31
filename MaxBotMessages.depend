@@ -1,12 +1,14 @@
 # depslib dependency file v1.0
-1449890512 source:/home/pi/Development/MaxBotMessages/src/MessageBroker.cpp
-	<chrono>
+1451536565 source:/home/pi/Development/MaxBotMessages/src/MessageBroker.cpp
+	<string>
 	<MessageBroker.h>
 
-1449887474 /home/pi/Development/MaxBotMessages/include/MessageBroker.h
+1451536103 /home/pi/Development/MaxBotMessages/include/MessageBroker.h
 	<thread>
 	<tuple>
 	<chrono>
+	<vector>
+	<mutex>
 	<google/protobuf/message.h>
 	<zmq.hpp>
 	<IMessageBroker.h>
@@ -35,7 +37,7 @@
 1449888266 /home/pi/Development/MaxBotMessages/include/IMessageBroker.h
 	<google/protobuf/message.h>
 
-1449890493 /home/pi/Development/MaxBotMessages/include/Multicast.h
+1451531779 /home/pi/Development/MaxBotMessages/include/Multicast.h
 	<string>
 	<vector>
 	<sys/types.h>
@@ -48,7 +50,7 @@
 	<unistd.h>
 	<fcntl.h>
 
-1448670601 source:/home/pi/Development/MaxBotMessages/src/Multicast.cpp
+1451534070 source:/home/pi/Development/MaxBotMessages/src/Multicast.cpp
 	<cassert>
 	<cstring>
 	<Multicast.h>
