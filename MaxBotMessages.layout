@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="include/IMessageBroker.h" open="1" top="0" tabpos="13">
+	<File name="MessageDefinition/Vector.proto" open="0" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="include/MessageBroker.h" open="1" top="0" tabpos="10">
-		<Cursor position="1639" topLine="2" />
+	<File name="include/IMessageBroker.h" open="0" top="0" tabpos="25">
+		<Cursor position="35" topLine="0" />
 	</File>
-	<File name="include/Multicast.h" open="1" top="0" tabpos="12">
-		<Cursor position="1483" topLine="5" />
+	<File name="include/MessageBroker.h" open="0" top="0" tabpos="10">
+		<Cursor position="1956" topLine="0" />
 	</File>
-	<File name="src/MessageBroker.cpp" open="1" top="0" tabpos="9">
-		<Cursor position="1767" topLine="21" />
+	<File name="include/Multicast.h" open="0" top="0" tabpos="12">
+		<Cursor position="1450" topLine="5" />
 	</File>
-	<File name="src/Multicast.cpp" open="1" top="0" tabpos="11">
-		<Cursor position="2214" topLine="6" />
+	<File name="src/MessageBroker.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="47" topLine="0" />
+	</File>
+	<File name="src/Multicast.cpp" open="0" top="0" tabpos="11">
+		<Cursor position="2202" topLine="6" />
 	</File>
 </CodeBlocks_layout_file>

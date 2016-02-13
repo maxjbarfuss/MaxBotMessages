@@ -1,0 +1,30 @@
+package MaxBotMessages;
+
+import "Stamp.proto";
+
+message Int {
+    required int32 value = 1;
+}
+
+message Double {
+    required double value = 1;
+}
+
+message String {
+    required string value = 1;
+}
+
+message IntStamped {
+    required Stamp stamp = 1;
+    required Int int = 2;
+}
+
+message DoubleStamped {
+    required Stamp stamp = 1;
+    required Double double = 2;
+}
+
+message StringStamped {
+    required Stamp stamp = 1;
+    required String string = 2;
+}

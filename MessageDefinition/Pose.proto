@@ -1,0 +1,25 @@
+package MaxBotMessages;
+
+import "Stamp.proto";
+import "Vector.proto";
+
+message Pose2 {
+    required double x = 1;
+    required double y = 2;
+    required double heading = 3;
+}
+
+message Pose2Stamped {
+    required Stamp stamp = 1;
+    required Pose2 pose = 2;
+}
+
+message Pose3 {
+    required Vector3 position = 1;
+    required Vector3 orientation = 2;
+}
+
+message Pose3Stamped {
+    required Stamp stamp = 1;
+    required Pose3 pose = 2;
+}

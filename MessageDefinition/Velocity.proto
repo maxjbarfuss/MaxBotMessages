@@ -1,0 +1,24 @@
+package MaxBotMessages;
+
+import "Stamp.proto";
+import "Vector.proto";
+
+message Velocity3 {
+    required Vector3 linear = 1;
+    required Vector3 angular = 2;
+}
+
+message Velocity3Stamped {
+    required Stamp stamp = 1;
+    required Velocity3 velocity = 2;
+}
+
+message Velocity2 {
+    required double linear = 1;
+    required double angular = 2;
+}
+
+message Velocity2Stamped {
+    required Stamp stamp = 1;
+    required Velocity2 velocity = 2;
+}

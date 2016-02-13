@@ -1,12 +1,9 @@
 package MaxBotMessages;
 
 import "Stamp.proto";
-
-message Range {
-    required double value = 1;
-}
+import "StandardTypes.proto";
 
 message RangeStamped {
     required Stamp stamp = 1;
-    required Range range = 2;
+    required Double range = 2;
 }
