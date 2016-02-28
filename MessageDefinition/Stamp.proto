@@ -1,6 +1,6 @@
 package MaxBotMessages;
 
 message Stamp {
-    required string hardware_id = 1;
+    required string component_id = 1;
     required int32 milliseconds_since_epoch = 2;
 }

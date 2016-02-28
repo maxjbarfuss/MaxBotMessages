@@ -90,17 +90,17 @@ class Stamp : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required string hardware_id = 1;
-  inline bool has_hardware_id() const;
-  inline void clear_hardware_id();
-  static const int kHardwareIdFieldNumber = 1;
-  inline const ::std::string& hardware_id() const;
-  inline void set_hardware_id(const ::std::string& value);
-  inline void set_hardware_id(const char* value);
-  inline void set_hardware_id(const char* value, size_t size);
-  inline ::std::string* mutable_hardware_id();
-  inline ::std::string* release_hardware_id();
-  inline void set_allocated_hardware_id(::std::string* hardware_id);
+  // required string component_id = 1;
+  inline bool has_component_id() const;
+  inline void clear_component_id();
+  static const int kComponentIdFieldNumber = 1;
+  inline const ::std::string& component_id() const;
+  inline void set_component_id(const ::std::string& value);
+  inline void set_component_id(const char* value);
+  inline void set_component_id(const char* value, size_t size);
+  inline ::std::string* mutable_component_id();
+  inline ::std::string* release_component_id();
+  inline void set_allocated_component_id(::std::string* component_id);
 
   // required int32 milliseconds_since_epoch = 2;
   inline bool has_milliseconds_since_epoch() const;
@@ -111,8 +111,8 @@ class Stamp : public ::google::protobuf::Message {
 
   // @@protoc_insertion_point(class_scope:MaxBotMessages.Stamp)
  private:
-  inline void set_has_hardware_id();
-  inline void clear_has_hardware_id();
+  inline void set_has_component_id();
+  inline void clear_has_component_id();
   inline void set_has_milliseconds_since_epoch();
   inline void clear_has_milliseconds_since_epoch();
 
@@ -120,7 +120,7 @@ class Stamp : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::std::string* hardware_id_;
+  ::std::string* component_id_;
   ::google::protobuf::int32 milliseconds_since_epoch_;
   friend void  protobuf_AddDesc_Stamp_2eproto();
   friend void protobuf_AssignDesc_Stamp_2eproto();
@@ -136,80 +136,80 @@ class Stamp : public ::google::protobuf::Message {
 
 // Stamp
 
-// required string hardware_id = 1;
-inline bool Stamp::has_hardware_id() const {
+// required string component_id = 1;
+inline bool Stamp::has_component_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Stamp::set_has_hardware_id() {
+inline void Stamp::set_has_component_id() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void Stamp::clear_has_hardware_id() {
+inline void Stamp::clear_has_component_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void Stamp::clear_hardware_id() {
-  if (hardware_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    hardware_id_->clear();
+inline void Stamp::clear_component_id() {
+  if (component_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    component_id_->clear();
   }
-  clear_has_hardware_id();
+  clear_has_component_id();
 }
-inline const ::std::string& Stamp::hardware_id() const {
-  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.hardware_id)
-  return *hardware_id_;
+inline const ::std::string& Stamp::component_id() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.component_id)
+  return *component_id_;
 }
-inline void Stamp::set_hardware_id(const ::std::string& value) {
-  set_has_hardware_id();
-  if (hardware_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    hardware_id_ = new ::std::string;
+inline void Stamp::set_component_id(const ::std::string& value) {
+  set_has_component_id();
+  if (component_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    component_id_ = new ::std::string;
   }
-  hardware_id_->assign(value);
-  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.hardware_id)
+  component_id_->assign(value);
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.component_id)
 }
-inline void Stamp::set_hardware_id(const char* value) {
-  set_has_hardware_id();
-  if (hardware_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    hardware_id_ = new ::std::string;
+inline void Stamp::set_component_id(const char* value) {
+  set_has_component_id();
+  if (component_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    component_id_ = new ::std::string;
   }
-  hardware_id_->assign(value);
-  // @@protoc_insertion_point(field_set_char:MaxBotMessages.Stamp.hardware_id)
+  component_id_->assign(value);
+  // @@protoc_insertion_point(field_set_char:MaxBotMessages.Stamp.component_id)
 }
-inline void Stamp::set_hardware_id(const char* value, size_t size) {
-  set_has_hardware_id();
-  if (hardware_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    hardware_id_ = new ::std::string;
+inline void Stamp::set_component_id(const char* value, size_t size) {
+  set_has_component_id();
+  if (component_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    component_id_ = new ::std::string;
   }
-  hardware_id_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:MaxBotMessages.Stamp.hardware_id)
+  component_id_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:MaxBotMessages.Stamp.component_id)
 }
-inline ::std::string* Stamp::mutable_hardware_id() {
-  set_has_hardware_id();
-  if (hardware_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    hardware_id_ = new ::std::string;
+inline ::std::string* Stamp::mutable_component_id() {
+  set_has_component_id();
+  if (component_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    component_id_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Stamp.hardware_id)
-  return hardware_id_;
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Stamp.component_id)
+  return component_id_;
 }
-inline ::std::string* Stamp::release_hardware_id() {
-  clear_has_hardware_id();
-  if (hardware_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* Stamp::release_component_id() {
+  clear_has_component_id();
+  if (component_id_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = hardware_id_;
-    hardware_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = component_id_;
+    component_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void Stamp::set_allocated_hardware_id(::std::string* hardware_id) {
-  if (hardware_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete hardware_id_;
+inline void Stamp::set_allocated_component_id(::std::string* component_id) {
+  if (component_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete component_id_;
   }
-  if (hardware_id) {
-    set_has_hardware_id();
-    hardware_id_ = hardware_id;
+  if (component_id) {
+    set_has_component_id();
+    component_id_ = component_id;
   } else {
-    clear_has_hardware_id();
-    hardware_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_component_id();
+    component_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Stamp.hardware_id)
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Stamp.component_id)
 }
 
 // required int32 milliseconds_since_epoch = 2;

@@ -35,7 +35,7 @@ void protobuf_AssignDesc_Stamp_2eproto() {
   GOOGLE_CHECK(file != NULL);
   Stamp_descriptor_ = file->message_type(0);
   static const int Stamp_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, hardware_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, component_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, milliseconds_since_epoch_),
   };
   Stamp_reflection_ =
@@ -79,9 +79,9 @@ void protobuf_AddDesc_Stamp_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\013Stamp.proto\022\016MaxBotMessages\">\n\005Stamp\022\023"
-    "\n\013hardware_id\030\001 \002(\t\022 \n\030milliseconds_sinc"
-    "e_epoch\030\002 \002(\005", 93);
+    "\n\013Stamp.proto\022\016MaxBotMessages\"\?\n\005Stamp\022\024"
+    "\n\014component_id\030\001 \002(\t\022 \n\030milliseconds_sin"
+    "ce_epoch\030\002 \002(\005", 94);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Stamp.proto", &protobuf_RegisterTypes);
   Stamp::default_instance_ = new Stamp();
@@ -99,7 +99,7 @@ struct StaticDescriptorInitializer_Stamp_2eproto {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int Stamp::kHardwareIdFieldNumber;
+const int Stamp::kComponentIdFieldNumber;
 const int Stamp::kMillisecondsSinceEpochFieldNumber;
 #endif  // !_MSC_VER
 
@@ -122,7 +122,7 @@ Stamp::Stamp(const Stamp& from)
 void Stamp::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  hardware_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  component_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   milliseconds_since_epoch_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -133,8 +133,8 @@ Stamp::~Stamp() {
 }
 
 void Stamp::SharedDtor() {
-  if (hardware_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete hardware_id_;
+  if (component_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete component_id_;
   }
   if (this != default_instance_) {
   }
@@ -163,9 +163,9 @@ Stamp* Stamp::New() const {
 
 void Stamp::Clear() {
   if (_has_bits_[0 / 32] & 3) {
-    if (has_hardware_id()) {
-      if (hardware_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        hardware_id_->clear();
+    if (has_component_id()) {
+      if (component_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        component_id_->clear();
       }
     }
     milliseconds_since_epoch_ = 0;
@@ -184,15 +184,15 @@ bool Stamp::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string hardware_id = 1;
+      // required string component_id = 1;
       case 1: {
         if (tag == 10) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_hardware_id()));
+                input, this->mutable_component_id()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->hardware_id().data(), this->hardware_id().length(),
+            this->component_id().data(), this->component_id().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "hardware_id");
+            "component_id");
         } else {
           goto handle_unusual;
         }
@@ -240,14 +240,14 @@ failure:
 void Stamp::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:MaxBotMessages.Stamp)
-  // required string hardware_id = 1;
-  if (has_hardware_id()) {
+  // required string component_id = 1;
+  if (has_component_id()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->hardware_id().data(), this->hardware_id().length(),
+      this->component_id().data(), this->component_id().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "hardware_id");
+      "component_id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->hardware_id(), output);
+      1, this->component_id(), output);
   }
 
   // required int32 milliseconds_since_epoch = 2;
@@ -265,15 +265,15 @@ void Stamp::SerializeWithCachedSizes(
 ::google::protobuf::uint8* Stamp::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:MaxBotMessages.Stamp)
-  // required string hardware_id = 1;
-  if (has_hardware_id()) {
+  // required string component_id = 1;
+  if (has_component_id()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->hardware_id().data(), this->hardware_id().length(),
+      this->component_id().data(), this->component_id().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "hardware_id");
+      "component_id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->hardware_id(), target);
+        1, this->component_id(), target);
   }
 
   // required int32 milliseconds_since_epoch = 2;
@@ -293,11 +293,11 @@ int Stamp::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required string hardware_id = 1;
-    if (has_hardware_id()) {
+    // required string component_id = 1;
+    if (has_component_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->hardware_id());
+          this->component_id());
     }
 
     // required int32 milliseconds_since_epoch = 2;
@@ -334,8 +334,8 @@ void Stamp::MergeFrom(const ::google::protobuf::Message& from) {
 void Stamp::MergeFrom(const Stamp& from) {
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_hardware_id()) {
-      set_hardware_id(from.hardware_id());
+    if (from.has_component_id()) {
+      set_component_id(from.component_id());
     }
     if (from.has_milliseconds_since_epoch()) {
       set_milliseconds_since_epoch(from.milliseconds_since_epoch());
@@ -364,7 +364,7 @@ bool Stamp::IsInitialized() const {
 
 void Stamp::Swap(Stamp* other) {
   if (other != this) {
-    std::swap(hardware_id_, other->hardware_id_);
+    std::swap(component_id_, other->component_id_);
     std::swap(milliseconds_since_epoch_, other->milliseconds_since_epoch_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);

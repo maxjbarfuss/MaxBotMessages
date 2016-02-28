@@ -25,6 +25,7 @@
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "Stamp.pb.h"
+#include "StandardTypes.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace MaxBotMessages {
@@ -34,89 +35,9 @@ void  protobuf_AddDesc_Range_2eproto();
 void protobuf_AssignDesc_Range_2eproto();
 void protobuf_ShutdownFile_Range_2eproto();
 
-class Range;
 class RangeStamped;
 
 // ===================================================================
-
-class Range : public ::google::protobuf::Message {
- public:
-  Range();
-  virtual ~Range();
-
-  Range(const Range& from);
-
-  inline Range& operator=(const Range& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Range& default_instance();
-
-  void Swap(Range* other);
-
-  // implements Message ----------------------------------------------
-
-  Range* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const Range& from);
-  void MergeFrom(const Range& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // required double value = 1;
-  inline bool has_value() const;
-  inline void clear_value();
-  static const int kValueFieldNumber = 1;
-  inline double value() const;
-  inline void set_value(double value);
-
-  // @@protoc_insertion_point(class_scope:MaxBotMessages.Range)
- private:
-  inline void set_has_value();
-  inline void clear_has_value();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  double value_;
-  friend void  protobuf_AddDesc_Range_2eproto();
-  friend void protobuf_AssignDesc_Range_2eproto();
-  friend void protobuf_ShutdownFile_Range_2eproto();
-
-  void InitAsDefaultInstance();
-  static Range* default_instance_;
-};
-// -------------------------------------------------------------------
 
 class RangeStamped : public ::google::protobuf::Message {
  public:
@@ -180,14 +101,14 @@ class RangeStamped : public ::google::protobuf::Message {
   inline ::MaxBotMessages::Stamp* release_stamp();
   inline void set_allocated_stamp(::MaxBotMessages::Stamp* stamp);
 
-  // required .MaxBotMessages.Range range = 2;
+  // required .MaxBotMessages.Double range = 2;
   inline bool has_range() const;
   inline void clear_range();
   static const int kRangeFieldNumber = 2;
-  inline const ::MaxBotMessages::Range& range() const;
-  inline ::MaxBotMessages::Range* mutable_range();
-  inline ::MaxBotMessages::Range* release_range();
-  inline void set_allocated_range(::MaxBotMessages::Range* range);
+  inline const ::MaxBotMessages::Double& range() const;
+  inline ::MaxBotMessages::Double* mutable_range();
+  inline ::MaxBotMessages::Double* release_range();
+  inline void set_allocated_range(::MaxBotMessages::Double* range);
 
   // @@protoc_insertion_point(class_scope:MaxBotMessages.RangeStamped)
  private:
@@ -201,7 +122,7 @@ class RangeStamped : public ::google::protobuf::Message {
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::MaxBotMessages::Stamp* stamp_;
-  ::MaxBotMessages::Range* range_;
+  ::MaxBotMessages::Double* range_;
   friend void  protobuf_AddDesc_Range_2eproto();
   friend void protobuf_AssignDesc_Range_2eproto();
   friend void protobuf_ShutdownFile_Range_2eproto();
@@ -213,34 +134,6 @@ class RangeStamped : public ::google::protobuf::Message {
 
 
 // ===================================================================
-
-// Range
-
-// required double value = 1;
-inline bool Range::has_value() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void Range::set_has_value() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void Range::clear_has_value() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void Range::clear_value() {
-  value_ = 0;
-  clear_has_value();
-}
-inline double Range::value() const {
-  // @@protoc_insertion_point(field_get:MaxBotMessages.Range.value)
-  return value_;
-}
-inline void Range::set_value(double value) {
-  set_has_value();
-  value_ = value;
-  // @@protoc_insertion_point(field_set:MaxBotMessages.Range.value)
-}
-
-// -------------------------------------------------------------------
 
 // RangeStamped
 
@@ -285,7 +178,7 @@ inline void RangeStamped::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
   // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.RangeStamped.stamp)
 }
 
-// required .MaxBotMessages.Range range = 2;
+// required .MaxBotMessages.Double range = 2;
 inline bool RangeStamped::has_range() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -296,26 +189,26 @@ inline void RangeStamped::clear_has_range() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void RangeStamped::clear_range() {
-  if (range_ != NULL) range_->::MaxBotMessages::Range::Clear();
+  if (range_ != NULL) range_->::MaxBotMessages::Double::Clear();
   clear_has_range();
 }
-inline const ::MaxBotMessages::Range& RangeStamped::range() const {
+inline const ::MaxBotMessages::Double& RangeStamped::range() const {
   // @@protoc_insertion_point(field_get:MaxBotMessages.RangeStamped.range)
   return range_ != NULL ? *range_ : *default_instance_->range_;
 }
-inline ::MaxBotMessages::Range* RangeStamped::mutable_range() {
+inline ::MaxBotMessages::Double* RangeStamped::mutable_range() {
   set_has_range();
-  if (range_ == NULL) range_ = new ::MaxBotMessages::Range;
+  if (range_ == NULL) range_ = new ::MaxBotMessages::Double;
   // @@protoc_insertion_point(field_mutable:MaxBotMessages.RangeStamped.range)
   return range_;
 }
-inline ::MaxBotMessages::Range* RangeStamped::release_range() {
+inline ::MaxBotMessages::Double* RangeStamped::release_range() {
   clear_has_range();
-  ::MaxBotMessages::Range* temp = range_;
+  ::MaxBotMessages::Double* temp = range_;
   range_ = NULL;
   return temp;
 }
-inline void RangeStamped::set_allocated_range(::MaxBotMessages::Range* range) {
+inline void RangeStamped::set_allocated_range(::MaxBotMessages::Double* range) {
   delete range_;
   range_ = range;
   if (range) {
