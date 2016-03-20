@@ -46,7 +46,7 @@ public:
     void Publish(const std::string &topic, google::protobuf::Message &message);
     void Subscribe(const std::string &topic, SubscriptionCallback callback);
     bool Subscribe(std::vector<std::string> endpoints);
-    int MillisecondsSinceEpoch();
+    long MicrosecondsSinceEpoch();
 };
 
 };

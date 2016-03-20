@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="MessageDefinition/Stamp.proto" open="0" top="0" tabpos="0">
-		<Cursor position="70" topLine="0" />
+	<File name="MessageDefinition/Stamp.proto" open="0" top="0" tabpos="1">
+		<Cursor position="116" topLine="0" />
 	</File>
 	<File name="MessageDefinition/Vector.proto" open="0" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="include/IMessageBroker.h" open="0" top="0" tabpos="25">
-		<Cursor position="123" topLine="0" />
+	<File name="include/IMessageBroker.h" open="0" top="0" tabpos="14">
+		<Cursor position="502" topLine="0" />
 	</File>
-	<File name="include/MessageBroker.h" open="0" top="0" tabpos="20">
-		<Cursor position="1099" topLine="0" />
+	<File name="include/MessageBroker.h" open="0" top="0" tabpos="15">
+		<Cursor position="970" topLine="0" />
 	</File>
 	<File name="include/Multicast.h" open="0" top="0" tabpos="12">
 		<Cursor position="1450" topLine="5" />
 	</File>
-	<File name="include/Stamp.pb.h" open="0" top="0" tabpos="0">
-		<Cursor position="7448" topLine="135" />
+	<File name="include/Stamp.pb.h" open="0" top="0" tabpos="2">
+		<Cursor position="8358" topLine="173" />
 	</File>
 	<File name="src/MessageBroker.cpp" open="0" top="0" tabpos="21">
-		<Cursor position="4936" topLine="68" />
+		<Cursor position="5155" topLine="49" />
 	</File>
 	<File name="src/Multicast.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="2202" topLine="6" />
@@ -28,7 +28,7 @@
 	<File name="src/Pose.pb.cc" open="0" top="0" tabpos="5">
 		<Cursor position="5827" topLine="114" />
 	</File>
-	<File name="src/Stamp.pb.cc" open="0" top="0" tabpos="0">
-		<Cursor position="11688" topLine="290" />
+	<File name="src/Stamp.pb.cc" open="0" top="0" tabpos="3">
+		<Cursor position="11762" topLine="305" />
 	</File>
 </CodeBlocks_layout_file>

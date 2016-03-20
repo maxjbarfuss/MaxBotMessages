@@ -136,9 +136,9 @@ void MessageBroker::DoWork() {
     ProcessSubscriptions();
 }
 
-int MessageBroker::MillisecondsSinceEpoch() {
+long MessageBroker::MicrosecondsSinceEpoch() {
     auto now = std::chrono::high_resolution_clock::now();
-    return std::chrono::duration_cast<std::chrono::milliseconds>(now - _epoch).count();
+    return std::chrono::duration_cast<std::chrono::microseconds>(now - _epoch).count();
 }
 
 }

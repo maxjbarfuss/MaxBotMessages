@@ -36,7 +36,7 @@ void protobuf_AssignDesc_Stamp_2eproto() {
   Stamp_descriptor_ = file->message_type(0);
   static const int Stamp_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, component_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, milliseconds_since_epoch_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, microseconds_since_epoch_),
   };
   Stamp_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -80,7 +80,7 @@ void protobuf_AddDesc_Stamp_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\013Stamp.proto\022\016MaxBotMessages\"\?\n\005Stamp\022\024"
-    "\n\014component_id\030\001 \002(\t\022 \n\030milliseconds_sin"
+    "\n\014component_id\030\001 \002(\t\022 \n\030microseconds_sin"
     "ce_epoch\030\002 \002(\005", 94);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Stamp.proto", &protobuf_RegisterTypes);
@@ -100,7 +100,7 @@ struct StaticDescriptorInitializer_Stamp_2eproto {
 
 #ifndef _MSC_VER
 const int Stamp::kComponentIdFieldNumber;
-const int Stamp::kMillisecondsSinceEpochFieldNumber;
+const int Stamp::kMicrosecondsSinceEpochFieldNumber;
 #endif  // !_MSC_VER
 
 Stamp::Stamp()
@@ -123,7 +123,7 @@ void Stamp::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   component_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  milliseconds_since_epoch_ = 0;
+  microseconds_since_epoch_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -168,7 +168,7 @@ void Stamp::Clear() {
         component_id_->clear();
       }
     }
-    milliseconds_since_epoch_ = 0;
+    microseconds_since_epoch_ = 0;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -196,18 +196,18 @@ bool Stamp::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(16)) goto parse_milliseconds_since_epoch;
+        if (input->ExpectTag(16)) goto parse_microseconds_since_epoch;
         break;
       }
 
-      // required int32 milliseconds_since_epoch = 2;
+      // required int32 microseconds_since_epoch = 2;
       case 2: {
         if (tag == 16) {
-         parse_milliseconds_since_epoch:
+         parse_microseconds_since_epoch:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &milliseconds_since_epoch_)));
-          set_has_milliseconds_since_epoch();
+                 input, &microseconds_since_epoch_)));
+          set_has_microseconds_since_epoch();
         } else {
           goto handle_unusual;
         }
@@ -250,9 +250,9 @@ void Stamp::SerializeWithCachedSizes(
       1, this->component_id(), output);
   }
 
-  // required int32 milliseconds_since_epoch = 2;
-  if (has_milliseconds_since_epoch()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->milliseconds_since_epoch(), output);
+  // required int32 microseconds_since_epoch = 2;
+  if (has_microseconds_since_epoch()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->microseconds_since_epoch(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -276,9 +276,9 @@ void Stamp::SerializeWithCachedSizes(
         1, this->component_id(), target);
   }
 
-  // required int32 milliseconds_since_epoch = 2;
-  if (has_milliseconds_since_epoch()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->milliseconds_since_epoch(), target);
+  // required int32 microseconds_since_epoch = 2;
+  if (has_microseconds_since_epoch()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->microseconds_since_epoch(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -300,11 +300,11 @@ int Stamp::ByteSize() const {
           this->component_id());
     }
 
-    // required int32 milliseconds_since_epoch = 2;
-    if (has_milliseconds_since_epoch()) {
+    // required int32 microseconds_since_epoch = 2;
+    if (has_microseconds_since_epoch()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->milliseconds_since_epoch());
+          this->microseconds_since_epoch());
     }
 
   }
@@ -337,8 +337,8 @@ void Stamp::MergeFrom(const Stamp& from) {
     if (from.has_component_id()) {
       set_component_id(from.component_id());
     }
-    if (from.has_milliseconds_since_epoch()) {
-      set_milliseconds_since_epoch(from.milliseconds_since_epoch());
+    if (from.has_microseconds_since_epoch()) {
+      set_microseconds_since_epoch(from.microseconds_since_epoch());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -365,7 +365,7 @@ bool Stamp::IsInitialized() const {
 void Stamp::Swap(Stamp* other) {
   if (other != this) {
     std::swap(component_id_, other->component_id_);
-    std::swap(milliseconds_since_epoch_, other->milliseconds_since_epoch_);
+    std::swap(microseconds_since_epoch_, other->microseconds_since_epoch_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

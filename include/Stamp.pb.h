@@ -102,26 +102,26 @@ class Stamp : public ::google::protobuf::Message {
   inline ::std::string* release_component_id();
   inline void set_allocated_component_id(::std::string* component_id);
 
-  // required int32 milliseconds_since_epoch = 2;
-  inline bool has_milliseconds_since_epoch() const;
-  inline void clear_milliseconds_since_epoch();
-  static const int kMillisecondsSinceEpochFieldNumber = 2;
-  inline ::google::protobuf::int32 milliseconds_since_epoch() const;
-  inline void set_milliseconds_since_epoch(::google::protobuf::int32 value);
+  // required int32 microseconds_since_epoch = 2;
+  inline bool has_microseconds_since_epoch() const;
+  inline void clear_microseconds_since_epoch();
+  static const int kMicrosecondsSinceEpochFieldNumber = 2;
+  inline ::google::protobuf::int32 microseconds_since_epoch() const;
+  inline void set_microseconds_since_epoch(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:MaxBotMessages.Stamp)
  private:
   inline void set_has_component_id();
   inline void clear_has_component_id();
-  inline void set_has_milliseconds_since_epoch();
-  inline void clear_has_milliseconds_since_epoch();
+  inline void set_has_microseconds_since_epoch();
+  inline void clear_has_microseconds_since_epoch();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::std::string* component_id_;
-  ::google::protobuf::int32 milliseconds_since_epoch_;
+  ::google::protobuf::int32 microseconds_since_epoch_;
   friend void  protobuf_AddDesc_Stamp_2eproto();
   friend void protobuf_AssignDesc_Stamp_2eproto();
   friend void protobuf_ShutdownFile_Stamp_2eproto();
@@ -212,28 +212,28 @@ inline void Stamp::set_allocated_component_id(::std::string* component_id) {
   // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Stamp.component_id)
 }
 
-// required int32 milliseconds_since_epoch = 2;
-inline bool Stamp::has_milliseconds_since_epoch() const {
+// required int32 microseconds_since_epoch = 2;
+inline bool Stamp::has_microseconds_since_epoch() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void Stamp::set_has_milliseconds_since_epoch() {
+inline void Stamp::set_has_microseconds_since_epoch() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void Stamp::clear_has_milliseconds_since_epoch() {
+inline void Stamp::clear_has_microseconds_since_epoch() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void Stamp::clear_milliseconds_since_epoch() {
-  milliseconds_since_epoch_ = 0;
-  clear_has_milliseconds_since_epoch();
+inline void Stamp::clear_microseconds_since_epoch() {
+  microseconds_since_epoch_ = 0;
+  clear_has_microseconds_since_epoch();
 }
-inline ::google::protobuf::int32 Stamp::milliseconds_since_epoch() const {
-  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.milliseconds_since_epoch)
-  return milliseconds_since_epoch_;
+inline ::google::protobuf::int32 Stamp::microseconds_since_epoch() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.microseconds_since_epoch)
+  return microseconds_since_epoch_;
 }
-inline void Stamp::set_milliseconds_since_epoch(::google::protobuf::int32 value) {
-  set_has_milliseconds_since_epoch();
-  milliseconds_since_epoch_ = value;
-  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.milliseconds_since_epoch)
+inline void Stamp::set_microseconds_since_epoch(::google::protobuf::int32 value) {
+  set_has_microseconds_since_epoch();
+  microseconds_since_epoch_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.microseconds_since_epoch)
 }
 
 
