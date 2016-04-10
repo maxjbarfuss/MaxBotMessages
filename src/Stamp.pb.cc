@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -39,16 +40,16 @@ void protobuf_AssignDesc_Stamp_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, microseconds_since_epoch_),
   };
   Stamp_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Stamp_descriptor_,
       Stamp::default_instance_,
       Stamp_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Stamp));
+      -1,
+      sizeof(Stamp),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -62,7 +63,7 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Stamp_descriptor_, &Stamp::default_instance());
+      Stamp_descriptor_, &Stamp::default_instance());
 }
 
 }  // namespace
@@ -81,7 +82,7 @@ void protobuf_AddDesc_Stamp_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\013Stamp.proto\022\016MaxBotMessages\"\?\n\005Stamp\022\024"
     "\n\014component_id\030\001 \002(\t\022 \n\030microseconds_sin"
-    "ce_epoch\030\002 \002(\005", 94);
+    "ce_epoch\030\002 \002(\003", 94);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Stamp.proto", &protobuf_RegisterTypes);
   Stamp::default_instance_ = new Stamp();
@@ -96,15 +97,25 @@ struct StaticDescriptorInitializer_Stamp_2eproto {
   }
 } static_descriptor_initializer_Stamp_2eproto_;
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
+static void MergeFromFail(int line) {
+  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
+}
+
+}  // namespace
+
+
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Stamp::kComponentIdFieldNumber;
 const int Stamp::kMicrosecondsSinceEpochFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Stamp::Stamp()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.Stamp)
 }
@@ -113,7 +124,8 @@ void Stamp::InitAsDefaultInstance() {
 }
 
 Stamp::Stamp(const Stamp& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Stamp)
@@ -122,8 +134,8 @@ Stamp::Stamp(const Stamp& from)
 void Stamp::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  component_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  microseconds_since_epoch_ = 0;
+  component_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  microseconds_since_epoch_ = GOOGLE_LONGLONG(0);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -133,9 +145,7 @@ Stamp::~Stamp() {
 }
 
 void Stamp::SharedDtor() {
-  if (component_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete component_id_;
-  }
+  component_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
@@ -157,21 +167,25 @@ const Stamp& Stamp::default_instance() {
 
 Stamp* Stamp::default_instance_ = NULL;
 
-Stamp* Stamp::New() const {
-  return new Stamp;
+Stamp* Stamp::New(::google::protobuf::Arena* arena) const {
+  Stamp* n = new Stamp;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Stamp::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_component_id()) {
-      if (component_id_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        component_id_->clear();
-      }
+      component_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
-    microseconds_since_epoch_ = 0;
+    microseconds_since_epoch_ = GOOGLE_LONGLONG(0);
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Stamp::MergePartialFromCodedStream(
@@ -192,7 +206,7 @@ bool Stamp::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->component_id().data(), this->component_id().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "component_id");
+            "MaxBotMessages.Stamp.component_id");
         } else {
           goto handle_unusual;
         }
@@ -200,12 +214,12 @@ bool Stamp::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 microseconds_since_epoch = 2;
+      // required int64 microseconds_since_epoch = 2;
       case 2: {
         if (tag == 16) {
          parse_microseconds_since_epoch:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
                  input, &microseconds_since_epoch_)));
           set_has_microseconds_since_epoch();
         } else {
@@ -245,17 +259,17 @@ void Stamp::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->component_id().data(), this->component_id().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "component_id");
+      "MaxBotMessages.Stamp.component_id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->component_id(), output);
   }
 
-  // required int32 microseconds_since_epoch = 2;
+  // required int64 microseconds_since_epoch = 2;
   if (has_microseconds_since_epoch()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->microseconds_since_epoch(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->microseconds_since_epoch(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -270,18 +284,18 @@ void Stamp::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->component_id().data(), this->component_id().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "component_id");
+      "MaxBotMessages.Stamp.component_id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->component_id(), target);
   }
 
-  // required int32 microseconds_since_epoch = 2;
+  // required int64 microseconds_since_epoch = 2;
   if (has_microseconds_since_epoch()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->microseconds_since_epoch(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->microseconds_since_epoch(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -289,26 +303,43 @@ void Stamp::SerializeWithCachedSizes(
   return target;
 }
 
+int Stamp::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_component_id()) {
+    // required string component_id = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->component_id());
+  }
+
+  if (has_microseconds_since_epoch()) {
+    // required int64 microseconds_since_epoch = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->microseconds_since_epoch());
+  }
+
+  return total_size;
+}
 int Stamp::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required string component_id = 1;
-    if (has_component_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->component_id());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->component_id());
 
-    // required int32 microseconds_since_epoch = 2;
-    if (has_microseconds_since_epoch()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->microseconds_since_epoch());
-    }
+    // required int64 microseconds_since_epoch = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->microseconds_since_epoch());
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -320,10 +351,10 @@ int Stamp::ByteSize() const {
 }
 
 void Stamp::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const Stamp* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Stamp*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Stamp* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Stamp>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -332,16 +363,19 @@ void Stamp::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void Stamp::MergeFrom(const Stamp& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_component_id()) {
-      set_component_id(from.component_id());
+      set_has_component_id();
+      component_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.component_id_);
     }
     if (from.has_microseconds_since_epoch()) {
       set_microseconds_since_epoch(from.microseconds_since_epoch());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void Stamp::CopyFrom(const ::google::protobuf::Message& from) {
@@ -363,13 +397,15 @@ bool Stamp::IsInitialized() const {
 }
 
 void Stamp::Swap(Stamp* other) {
-  if (other != this) {
-    std::swap(component_id_, other->component_id_);
-    std::swap(microseconds_since_epoch_, other->microseconds_since_epoch_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Stamp::InternalSwap(Stamp* other) {
+  component_id_.Swap(&other->component_id_);
+  std::swap(microseconds_since_epoch_, other->microseconds_since_epoch_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Stamp::GetMetadata() const {
@@ -380,6 +416,87 @@ void Stamp::Swap(Stamp* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Stamp
+
+// required string component_id = 1;
+bool Stamp::has_component_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Stamp::set_has_component_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Stamp::clear_has_component_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Stamp::clear_component_id() {
+  component_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_component_id();
+}
+ const ::std::string& Stamp::component_id() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.component_id)
+  return component_id_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void Stamp::set_component_id(const ::std::string& value) {
+  set_has_component_id();
+  component_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.component_id)
+}
+ void Stamp::set_component_id(const char* value) {
+  set_has_component_id();
+  component_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:MaxBotMessages.Stamp.component_id)
+}
+ void Stamp::set_component_id(const char* value, size_t size) {
+  set_has_component_id();
+  component_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:MaxBotMessages.Stamp.component_id)
+}
+ ::std::string* Stamp::mutable_component_id() {
+  set_has_component_id();
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Stamp.component_id)
+  return component_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ ::std::string* Stamp::release_component_id() {
+  clear_has_component_id();
+  return component_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void Stamp::set_allocated_component_id(::std::string* component_id) {
+  if (component_id != NULL) {
+    set_has_component_id();
+  } else {
+    clear_has_component_id();
+  }
+  component_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), component_id);
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Stamp.component_id)
+}
+
+// required int64 microseconds_since_epoch = 2;
+bool Stamp::has_microseconds_since_epoch() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Stamp::set_has_microseconds_since_epoch() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Stamp::clear_has_microseconds_since_epoch() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Stamp::clear_microseconds_since_epoch() {
+  microseconds_since_epoch_ = GOOGLE_LONGLONG(0);
+  clear_has_microseconds_since_epoch();
+}
+ ::google::protobuf::int64 Stamp::microseconds_since_epoch() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.microseconds_since_epoch)
+  return microseconds_since_epoch_;
+}
+ void Stamp::set_microseconds_since_epoch(::google::protobuf::int64 value) {
+  set_has_microseconds_since_epoch();
+  microseconds_since_epoch_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.microseconds_since_epoch)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -48,64 +49,64 @@ void protobuf_AssignDesc_Velocity_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity3, angular_),
   };
   Velocity3_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Velocity3_descriptor_,
       Velocity3::default_instance_,
       Velocity3_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity3, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity3, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Velocity3));
+      -1,
+      sizeof(Velocity3),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity3, _internal_metadata_),
+      -1);
   Velocity3Stamped_descriptor_ = file->message_type(1);
   static const int Velocity3Stamped_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity3Stamped, stamp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity3Stamped, velocity_),
   };
   Velocity3Stamped_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Velocity3Stamped_descriptor_,
       Velocity3Stamped::default_instance_,
       Velocity3Stamped_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity3Stamped, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity3Stamped, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Velocity3Stamped));
+      -1,
+      sizeof(Velocity3Stamped),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity3Stamped, _internal_metadata_),
+      -1);
   Velocity2_descriptor_ = file->message_type(2);
   static const int Velocity2_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity2, linear_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity2, angular_),
   };
   Velocity2_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Velocity2_descriptor_,
       Velocity2::default_instance_,
       Velocity2_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity2, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity2, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Velocity2));
+      -1,
+      sizeof(Velocity2),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity2, _internal_metadata_),
+      -1);
   Velocity2Stamped_descriptor_ = file->message_type(3);
   static const int Velocity2Stamped_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity2Stamped, stamp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity2Stamped, velocity_),
   };
   Velocity2Stamped_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Velocity2Stamped_descriptor_,
       Velocity2Stamped::default_instance_,
       Velocity2Stamped_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity2Stamped, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity2Stamped, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Velocity2Stamped));
+      -1,
+      sizeof(Velocity2Stamped),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Velocity2Stamped, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -119,13 +120,13 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Velocity3_descriptor_, &Velocity3::default_instance());
+      Velocity3_descriptor_, &Velocity3::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Velocity3Stamped_descriptor_, &Velocity3Stamped::default_instance());
+      Velocity3Stamped_descriptor_, &Velocity3Stamped::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Velocity2_descriptor_, &Velocity2::default_instance());
+      Velocity2_descriptor_, &Velocity2::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Velocity2Stamped_descriptor_, &Velocity2Stamped::default_instance());
+      Velocity2Stamped_descriptor_, &Velocity2Stamped::default_instance());
 }
 
 }  // namespace
@@ -181,15 +182,25 @@ struct StaticDescriptorInitializer_Velocity_2eproto {
   }
 } static_descriptor_initializer_Velocity_2eproto_;
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
+static void MergeFromFail(int line) {
+  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
+}
+
+}  // namespace
+
+
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Velocity3::kLinearFieldNumber;
 const int Velocity3::kAngularFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Velocity3::Velocity3()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.Velocity3)
 }
@@ -200,7 +211,8 @@ void Velocity3::InitAsDefaultInstance() {
 }
 
 Velocity3::Velocity3(const Velocity3& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Velocity3)
@@ -242,12 +254,16 @@ const Velocity3& Velocity3::default_instance() {
 
 Velocity3* Velocity3::default_instance_ = NULL;
 
-Velocity3* Velocity3::New() const {
-  return new Velocity3;
+Velocity3* Velocity3::New(::google::protobuf::Arena* arena) const {
+  Velocity3* n = new Velocity3;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Velocity3::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_linear()) {
       if (linear_ != NULL) linear_->::MaxBotMessages::Vector3::Clear();
     }
@@ -256,7 +272,9 @@ void Velocity3::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Velocity3::MergePartialFromCodedStream(
@@ -322,16 +340,16 @@ void Velocity3::SerializeWithCachedSizes(
   // required .MaxBotMessages.Vector3 linear = 1;
   if (has_linear()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->linear(), output);
+      1, *this->linear_, output);
   }
 
   // required .MaxBotMessages.Vector3 angular = 2;
   if (has_angular()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->angular(), output);
+      2, *this->angular_, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -345,17 +363,17 @@ void Velocity3::SerializeWithCachedSizes(
   if (has_linear()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, this->linear(), target);
+        1, *this->linear_, target);
   }
 
   // required .MaxBotMessages.Vector3 angular = 2;
   if (has_angular()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->angular(), target);
+        2, *this->angular_, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -363,26 +381,43 @@ void Velocity3::SerializeWithCachedSizes(
   return target;
 }
 
+int Velocity3::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_linear()) {
+    // required .MaxBotMessages.Vector3 linear = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->linear_);
+  }
+
+  if (has_angular()) {
+    // required .MaxBotMessages.Vector3 angular = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->angular_);
+  }
+
+  return total_size;
+}
 int Velocity3::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required .MaxBotMessages.Vector3 linear = 1;
-    if (has_linear()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->linear());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->linear_);
 
     // required .MaxBotMessages.Vector3 angular = 2;
-    if (has_angular()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->angular());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->angular_);
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -394,10 +429,10 @@ int Velocity3::ByteSize() const {
 }
 
 void Velocity3::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const Velocity3* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Velocity3*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Velocity3* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Velocity3>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -406,7 +441,7 @@ void Velocity3::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void Velocity3::MergeFrom(const Velocity3& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_linear()) {
       mutable_linear()->::MaxBotMessages::Vector3::MergeFrom(from.linear());
@@ -415,7 +450,9 @@ void Velocity3::MergeFrom(const Velocity3& from) {
       mutable_angular()->::MaxBotMessages::Vector3::MergeFrom(from.angular());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void Velocity3::CopyFrom(const ::google::protobuf::Message& from) {
@@ -434,22 +471,24 @@ bool Velocity3::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   if (has_linear()) {
-    if (!this->linear().IsInitialized()) return false;
+    if (!this->linear_->IsInitialized()) return false;
   }
   if (has_angular()) {
-    if (!this->angular().IsInitialized()) return false;
+    if (!this->angular_->IsInitialized()) return false;
   }
   return true;
 }
 
 void Velocity3::Swap(Velocity3* other) {
-  if (other != this) {
-    std::swap(linear_, other->linear_);
-    std::swap(angular_, other->angular_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Velocity3::InternalSwap(Velocity3* other) {
+  std::swap(linear_, other->linear_);
+  std::swap(angular_, other->angular_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Velocity3::GetMetadata() const {
@@ -460,16 +499,106 @@ void Velocity3::Swap(Velocity3* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Velocity3
+
+// required .MaxBotMessages.Vector3 linear = 1;
+bool Velocity3::has_linear() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Velocity3::set_has_linear() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Velocity3::clear_has_linear() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Velocity3::clear_linear() {
+  if (linear_ != NULL) linear_->::MaxBotMessages::Vector3::Clear();
+  clear_has_linear();
+}
+const ::MaxBotMessages::Vector3& Velocity3::linear() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Velocity3.linear)
+  return linear_ != NULL ? *linear_ : *default_instance_->linear_;
+}
+::MaxBotMessages::Vector3* Velocity3::mutable_linear() {
+  set_has_linear();
+  if (linear_ == NULL) {
+    linear_ = new ::MaxBotMessages::Vector3;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Velocity3.linear)
+  return linear_;
+}
+::MaxBotMessages::Vector3* Velocity3::release_linear() {
+  clear_has_linear();
+  ::MaxBotMessages::Vector3* temp = linear_;
+  linear_ = NULL;
+  return temp;
+}
+void Velocity3::set_allocated_linear(::MaxBotMessages::Vector3* linear) {
+  delete linear_;
+  linear_ = linear;
+  if (linear) {
+    set_has_linear();
+  } else {
+    clear_has_linear();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Velocity3.linear)
+}
+
+// required .MaxBotMessages.Vector3 angular = 2;
+bool Velocity3::has_angular() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Velocity3::set_has_angular() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Velocity3::clear_has_angular() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Velocity3::clear_angular() {
+  if (angular_ != NULL) angular_->::MaxBotMessages::Vector3::Clear();
+  clear_has_angular();
+}
+const ::MaxBotMessages::Vector3& Velocity3::angular() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Velocity3.angular)
+  return angular_ != NULL ? *angular_ : *default_instance_->angular_;
+}
+::MaxBotMessages::Vector3* Velocity3::mutable_angular() {
+  set_has_angular();
+  if (angular_ == NULL) {
+    angular_ = new ::MaxBotMessages::Vector3;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Velocity3.angular)
+  return angular_;
+}
+::MaxBotMessages::Vector3* Velocity3::release_angular() {
+  clear_has_angular();
+  ::MaxBotMessages::Vector3* temp = angular_;
+  angular_ = NULL;
+  return temp;
+}
+void Velocity3::set_allocated_angular(::MaxBotMessages::Vector3* angular) {
+  delete angular_;
+  angular_ = angular;
+  if (angular) {
+    set_has_angular();
+  } else {
+    clear_has_angular();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Velocity3.angular)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Velocity3Stamped::kStampFieldNumber;
 const int Velocity3Stamped::kVelocityFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Velocity3Stamped::Velocity3Stamped()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.Velocity3Stamped)
 }
@@ -480,7 +609,8 @@ void Velocity3Stamped::InitAsDefaultInstance() {
 }
 
 Velocity3Stamped::Velocity3Stamped(const Velocity3Stamped& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Velocity3Stamped)
@@ -522,12 +652,16 @@ const Velocity3Stamped& Velocity3Stamped::default_instance() {
 
 Velocity3Stamped* Velocity3Stamped::default_instance_ = NULL;
 
-Velocity3Stamped* Velocity3Stamped::New() const {
-  return new Velocity3Stamped;
+Velocity3Stamped* Velocity3Stamped::New(::google::protobuf::Arena* arena) const {
+  Velocity3Stamped* n = new Velocity3Stamped;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Velocity3Stamped::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_stamp()) {
       if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
     }
@@ -536,7 +670,9 @@ void Velocity3Stamped::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Velocity3Stamped::MergePartialFromCodedStream(
@@ -602,16 +738,16 @@ void Velocity3Stamped::SerializeWithCachedSizes(
   // required .MaxBotMessages.Stamp stamp = 1;
   if (has_stamp()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->stamp(), output);
+      1, *this->stamp_, output);
   }
 
   // required .MaxBotMessages.Velocity3 velocity = 2;
   if (has_velocity()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->velocity(), output);
+      2, *this->velocity_, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -625,17 +761,17 @@ void Velocity3Stamped::SerializeWithCachedSizes(
   if (has_stamp()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, this->stamp(), target);
+        1, *this->stamp_, target);
   }
 
   // required .MaxBotMessages.Velocity3 velocity = 2;
   if (has_velocity()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->velocity(), target);
+        2, *this->velocity_, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -643,26 +779,43 @@ void Velocity3Stamped::SerializeWithCachedSizes(
   return target;
 }
 
+int Velocity3Stamped::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_velocity()) {
+    // required .MaxBotMessages.Velocity3 velocity = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->velocity_);
+  }
+
+  return total_size;
+}
 int Velocity3Stamped::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required .MaxBotMessages.Stamp stamp = 1;
-    if (has_stamp()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->stamp());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
 
     // required .MaxBotMessages.Velocity3 velocity = 2;
-    if (has_velocity()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->velocity());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->velocity_);
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -674,10 +827,10 @@ int Velocity3Stamped::ByteSize() const {
 }
 
 void Velocity3Stamped::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const Velocity3Stamped* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Velocity3Stamped*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Velocity3Stamped* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Velocity3Stamped>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -686,7 +839,7 @@ void Velocity3Stamped::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void Velocity3Stamped::MergeFrom(const Velocity3Stamped& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_stamp()) {
       mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
@@ -695,7 +848,9 @@ void Velocity3Stamped::MergeFrom(const Velocity3Stamped& from) {
       mutable_velocity()->::MaxBotMessages::Velocity3::MergeFrom(from.velocity());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void Velocity3Stamped::CopyFrom(const ::google::protobuf::Message& from) {
@@ -714,22 +869,24 @@ bool Velocity3Stamped::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   if (has_stamp()) {
-    if (!this->stamp().IsInitialized()) return false;
+    if (!this->stamp_->IsInitialized()) return false;
   }
   if (has_velocity()) {
-    if (!this->velocity().IsInitialized()) return false;
+    if (!this->velocity_->IsInitialized()) return false;
   }
   return true;
 }
 
 void Velocity3Stamped::Swap(Velocity3Stamped* other) {
-  if (other != this) {
-    std::swap(stamp_, other->stamp_);
-    std::swap(velocity_, other->velocity_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Velocity3Stamped::InternalSwap(Velocity3Stamped* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(velocity_, other->velocity_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Velocity3Stamped::GetMetadata() const {
@@ -740,16 +897,106 @@ void Velocity3Stamped::Swap(Velocity3Stamped* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Velocity3Stamped
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool Velocity3Stamped::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Velocity3Stamped::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Velocity3Stamped::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Velocity3Stamped::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& Velocity3Stamped::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Velocity3Stamped.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* Velocity3Stamped::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Velocity3Stamped.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* Velocity3Stamped::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void Velocity3Stamped::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Velocity3Stamped.stamp)
+}
+
+// required .MaxBotMessages.Velocity3 velocity = 2;
+bool Velocity3Stamped::has_velocity() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Velocity3Stamped::set_has_velocity() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Velocity3Stamped::clear_has_velocity() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Velocity3Stamped::clear_velocity() {
+  if (velocity_ != NULL) velocity_->::MaxBotMessages::Velocity3::Clear();
+  clear_has_velocity();
+}
+const ::MaxBotMessages::Velocity3& Velocity3Stamped::velocity() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Velocity3Stamped.velocity)
+  return velocity_ != NULL ? *velocity_ : *default_instance_->velocity_;
+}
+::MaxBotMessages::Velocity3* Velocity3Stamped::mutable_velocity() {
+  set_has_velocity();
+  if (velocity_ == NULL) {
+    velocity_ = new ::MaxBotMessages::Velocity3;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Velocity3Stamped.velocity)
+  return velocity_;
+}
+::MaxBotMessages::Velocity3* Velocity3Stamped::release_velocity() {
+  clear_has_velocity();
+  ::MaxBotMessages::Velocity3* temp = velocity_;
+  velocity_ = NULL;
+  return temp;
+}
+void Velocity3Stamped::set_allocated_velocity(::MaxBotMessages::Velocity3* velocity) {
+  delete velocity_;
+  velocity_ = velocity;
+  if (velocity) {
+    set_has_velocity();
+  } else {
+    clear_has_velocity();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Velocity3Stamped.velocity)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Velocity2::kLinearFieldNumber;
 const int Velocity2::kAngularFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Velocity2::Velocity2()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.Velocity2)
 }
@@ -758,7 +1005,8 @@ void Velocity2::InitAsDefaultInstance() {
 }
 
 Velocity2::Velocity2(const Velocity2& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Velocity2)
@@ -798,28 +1046,32 @@ const Velocity2& Velocity2::default_instance() {
 
 Velocity2* Velocity2::default_instance_ = NULL;
 
-Velocity2* Velocity2::New() const {
-  return new Velocity2;
+Velocity2* Velocity2::New(::google::protobuf::Arena* arena) const {
+  Velocity2* n = new Velocity2;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Velocity2::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<Velocity2*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Velocity2*>(16)->f)
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
   ZR_(linear_, angular_);
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Velocity2::MergePartialFromCodedStream(
@@ -896,7 +1148,7 @@ void Velocity2::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->angular(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -916,7 +1168,7 @@ void Velocity2::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->angular(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -924,22 +1176,35 @@ void Velocity2::SerializeWithCachedSizes(
   return target;
 }
 
+int Velocity2::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_linear()) {
+    // required double linear = 1;
+    total_size += 1 + 8;
+  }
+
+  if (has_angular()) {
+    // required double angular = 2;
+    total_size += 1 + 8;
+  }
+
+  return total_size;
+}
 int Velocity2::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required double linear = 1;
-    if (has_linear()) {
-      total_size += 1 + 8;
-    }
+    total_size += 1 + 8;
 
     // required double angular = 2;
-    if (has_angular()) {
-      total_size += 1 + 8;
-    }
+    total_size += 1 + 8;
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -951,10 +1216,10 @@ int Velocity2::ByteSize() const {
 }
 
 void Velocity2::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const Velocity2* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Velocity2*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Velocity2* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Velocity2>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -963,7 +1228,7 @@ void Velocity2::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void Velocity2::MergeFrom(const Velocity2& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_linear()) {
       set_linear(from.linear());
@@ -972,7 +1237,9 @@ void Velocity2::MergeFrom(const Velocity2& from) {
       set_angular(from.angular());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void Velocity2::CopyFrom(const ::google::protobuf::Message& from) {
@@ -994,13 +1261,15 @@ bool Velocity2::IsInitialized() const {
 }
 
 void Velocity2::Swap(Velocity2* other) {
-  if (other != this) {
-    std::swap(linear_, other->linear_);
-    std::swap(angular_, other->angular_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Velocity2::InternalSwap(Velocity2* other) {
+  std::swap(linear_, other->linear_);
+  std::swap(angular_, other->angular_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Velocity2::GetMetadata() const {
@@ -1011,16 +1280,68 @@ void Velocity2::Swap(Velocity2* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Velocity2
+
+// required double linear = 1;
+bool Velocity2::has_linear() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Velocity2::set_has_linear() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Velocity2::clear_has_linear() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Velocity2::clear_linear() {
+  linear_ = 0;
+  clear_has_linear();
+}
+ double Velocity2::linear() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Velocity2.linear)
+  return linear_;
+}
+ void Velocity2::set_linear(double value) {
+  set_has_linear();
+  linear_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Velocity2.linear)
+}
+
+// required double angular = 2;
+bool Velocity2::has_angular() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Velocity2::set_has_angular() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Velocity2::clear_has_angular() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Velocity2::clear_angular() {
+  angular_ = 0;
+  clear_has_angular();
+}
+ double Velocity2::angular() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Velocity2.angular)
+  return angular_;
+}
+ void Velocity2::set_angular(double value) {
+  set_has_angular();
+  angular_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Velocity2.angular)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Velocity2Stamped::kStampFieldNumber;
 const int Velocity2Stamped::kVelocityFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Velocity2Stamped::Velocity2Stamped()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.Velocity2Stamped)
 }
@@ -1031,7 +1352,8 @@ void Velocity2Stamped::InitAsDefaultInstance() {
 }
 
 Velocity2Stamped::Velocity2Stamped(const Velocity2Stamped& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Velocity2Stamped)
@@ -1073,12 +1395,16 @@ const Velocity2Stamped& Velocity2Stamped::default_instance() {
 
 Velocity2Stamped* Velocity2Stamped::default_instance_ = NULL;
 
-Velocity2Stamped* Velocity2Stamped::New() const {
-  return new Velocity2Stamped;
+Velocity2Stamped* Velocity2Stamped::New(::google::protobuf::Arena* arena) const {
+  Velocity2Stamped* n = new Velocity2Stamped;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Velocity2Stamped::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_stamp()) {
       if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
     }
@@ -1087,7 +1413,9 @@ void Velocity2Stamped::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Velocity2Stamped::MergePartialFromCodedStream(
@@ -1153,16 +1481,16 @@ void Velocity2Stamped::SerializeWithCachedSizes(
   // required .MaxBotMessages.Stamp stamp = 1;
   if (has_stamp()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->stamp(), output);
+      1, *this->stamp_, output);
   }
 
   // required .MaxBotMessages.Velocity2 velocity = 2;
   if (has_velocity()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->velocity(), output);
+      2, *this->velocity_, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1176,17 +1504,17 @@ void Velocity2Stamped::SerializeWithCachedSizes(
   if (has_stamp()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, this->stamp(), target);
+        1, *this->stamp_, target);
   }
 
   // required .MaxBotMessages.Velocity2 velocity = 2;
   if (has_velocity()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->velocity(), target);
+        2, *this->velocity_, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1194,26 +1522,43 @@ void Velocity2Stamped::SerializeWithCachedSizes(
   return target;
 }
 
+int Velocity2Stamped::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_velocity()) {
+    // required .MaxBotMessages.Velocity2 velocity = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->velocity_);
+  }
+
+  return total_size;
+}
 int Velocity2Stamped::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required .MaxBotMessages.Stamp stamp = 1;
-    if (has_stamp()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->stamp());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
 
     // required .MaxBotMessages.Velocity2 velocity = 2;
-    if (has_velocity()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->velocity());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->velocity_);
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1225,10 +1570,10 @@ int Velocity2Stamped::ByteSize() const {
 }
 
 void Velocity2Stamped::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const Velocity2Stamped* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Velocity2Stamped*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Velocity2Stamped* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Velocity2Stamped>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1237,7 +1582,7 @@ void Velocity2Stamped::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void Velocity2Stamped::MergeFrom(const Velocity2Stamped& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_stamp()) {
       mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
@@ -1246,7 +1591,9 @@ void Velocity2Stamped::MergeFrom(const Velocity2Stamped& from) {
       mutable_velocity()->::MaxBotMessages::Velocity2::MergeFrom(from.velocity());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void Velocity2Stamped::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1265,22 +1612,24 @@ bool Velocity2Stamped::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   if (has_stamp()) {
-    if (!this->stamp().IsInitialized()) return false;
+    if (!this->stamp_->IsInitialized()) return false;
   }
   if (has_velocity()) {
-    if (!this->velocity().IsInitialized()) return false;
+    if (!this->velocity_->IsInitialized()) return false;
   }
   return true;
 }
 
 void Velocity2Stamped::Swap(Velocity2Stamped* other) {
-  if (other != this) {
-    std::swap(stamp_, other->stamp_);
-    std::swap(velocity_, other->velocity_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Velocity2Stamped::InternalSwap(Velocity2Stamped* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(velocity_, other->velocity_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Velocity2Stamped::GetMetadata() const {
@@ -1291,6 +1640,96 @@ void Velocity2Stamped::Swap(Velocity2Stamped* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Velocity2Stamped
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool Velocity2Stamped::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Velocity2Stamped::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Velocity2Stamped::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Velocity2Stamped::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& Velocity2Stamped::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Velocity2Stamped.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* Velocity2Stamped::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Velocity2Stamped.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* Velocity2Stamped::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void Velocity2Stamped::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Velocity2Stamped.stamp)
+}
+
+// required .MaxBotMessages.Velocity2 velocity = 2;
+bool Velocity2Stamped::has_velocity() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Velocity2Stamped::set_has_velocity() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Velocity2Stamped::clear_has_velocity() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Velocity2Stamped::clear_velocity() {
+  if (velocity_ != NULL) velocity_->::MaxBotMessages::Velocity2::Clear();
+  clear_has_velocity();
+}
+const ::MaxBotMessages::Velocity2& Velocity2Stamped::velocity() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Velocity2Stamped.velocity)
+  return velocity_ != NULL ? *velocity_ : *default_instance_->velocity_;
+}
+::MaxBotMessages::Velocity2* Velocity2Stamped::mutable_velocity() {
+  set_has_velocity();
+  if (velocity_ == NULL) {
+    velocity_ = new ::MaxBotMessages::Velocity2;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Velocity2Stamped.velocity)
+  return velocity_;
+}
+::MaxBotMessages::Velocity2* Velocity2Stamped::release_velocity() {
+  clear_has_velocity();
+  ::MaxBotMessages::Velocity2* temp = velocity_;
+  velocity_ = NULL;
+  return temp;
+}
+void Velocity2Stamped::set_allocated_velocity(::MaxBotMessages::Velocity2* velocity) {
+  delete velocity_;
+  velocity_ = velocity;
+  if (velocity) {
+    set_has_velocity();
+  } else {
+    clear_has_velocity();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Velocity2Stamped.velocity)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

@@ -10,7 +10,7 @@ std::mutex                      MessageBroker::_inProcessMutex;
 
 MessageBroker::MessageBroker(const int threadPoolSize)
     : _context(zmq::context_t(threadPoolSize)), _publisher(_context, ZMQ_PUB),
-    _epoch(std::chrono::high_resolution_clock::from_time_t(0)), _sentMulticast(false), _connectedInProcess(1) {
+    _epoch(std::chrono::steady_clock::now()), _sentMulticast(false), _connectedInProcess(1) {
     BindPublisherAndLocalSubscriber();
     SendMulticast();
 }
@@ -136,8 +136,8 @@ void MessageBroker::DoWork() {
     ProcessSubscriptions();
 }
 
-long MessageBroker::MicrosecondsSinceEpoch() {
-    auto now = std::chrono::high_resolution_clock::now();
+long long MessageBroker::MicrosecondsSinceEpoch() {
+    auto now = std::chrono::steady_clock::now();
     return std::chrono::duration_cast<std::chrono::microseconds>(now - _epoch).count();
 }
 

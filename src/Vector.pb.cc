@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -23,9 +24,15 @@ namespace {
 const ::google::protobuf::Descriptor* Vector3_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Vector3_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Quaternion_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Quaternion_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Vector3Stamped_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Vector3Stamped_reflection_ = NULL;
+const ::google::protobuf::Descriptor* QuaternionStamped_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  QuaternionStamped_reflection_ = NULL;
 
 }  // namespace
 
@@ -43,32 +50,66 @@ void protobuf_AssignDesc_Vector_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3, z_),
   };
   Vector3_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Vector3_descriptor_,
       Vector3::default_instance_,
       Vector3_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Vector3));
-  Vector3Stamped_descriptor_ = file->message_type(1);
+      -1,
+      sizeof(Vector3),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3, _internal_metadata_),
+      -1);
+  Quaternion_descriptor_ = file->message_type(1);
+  static const int Quaternion_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, w_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, z_),
+  };
+  Quaternion_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Quaternion_descriptor_,
+      Quaternion::default_instance_,
+      Quaternion_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, _has_bits_[0]),
+      -1,
+      -1,
+      sizeof(Quaternion),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Quaternion, _internal_metadata_),
+      -1);
+  Vector3Stamped_descriptor_ = file->message_type(2);
   static const int Vector3Stamped_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3Stamped, stamp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3Stamped, vector_),
   };
   Vector3Stamped_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Vector3Stamped_descriptor_,
       Vector3Stamped::default_instance_,
       Vector3Stamped_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3Stamped, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3Stamped, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Vector3Stamped));
+      -1,
+      sizeof(Vector3Stamped),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3Stamped, _internal_metadata_),
+      -1);
+  QuaternionStamped_descriptor_ = file->message_type(3);
+  static const int QuaternionStamped_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStamped, stamp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStamped, quaternion_),
+  };
+  QuaternionStamped_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      QuaternionStamped_descriptor_,
+      QuaternionStamped::default_instance_,
+      QuaternionStamped_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStamped, _has_bits_[0]),
+      -1,
+      -1,
+      sizeof(QuaternionStamped),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStamped, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -82,9 +123,13 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Vector3_descriptor_, &Vector3::default_instance());
+      Vector3_descriptor_, &Vector3::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Vector3Stamped_descriptor_, &Vector3Stamped::default_instance());
+      Quaternion_descriptor_, &Quaternion::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Vector3Stamped_descriptor_, &Vector3Stamped::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      QuaternionStamped_descriptor_, &QuaternionStamped::default_instance());
 }
 
 }  // namespace
@@ -92,8 +137,12 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void protobuf_ShutdownFile_Vector_2eproto() {
   delete Vector3::default_instance_;
   delete Vector3_reflection_;
+  delete Quaternion::default_instance_;
+  delete Quaternion_reflection_;
   delete Vector3Stamped::default_instance_;
   delete Vector3Stamped_reflection_;
+  delete QuaternionStamped::default_instance_;
+  delete QuaternionStamped_reflection_;
 }
 
 void protobuf_AddDesc_Vector_2eproto() {
@@ -106,15 +155,23 @@ void protobuf_AddDesc_Vector_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\014Vector.proto\022\016MaxBotMessages\032\013Stamp.pr"
     "oto\"*\n\007Vector3\022\t\n\001x\030\001 \002(\001\022\t\n\001y\030\002 \002(\001\022\t\n\001"
-    "z\030\003 \002(\001\"_\n\016Vector3Stamped\022$\n\005stamp\030\001 \002(\013"
-    "2\025.MaxBotMessages.Stamp\022\'\n\006vector\030\002 \002(\0132"
-    "\027.MaxBotMessages.Vector3", 184);
+    "z\030\003 \002(\001\"8\n\nQuaternion\022\t\n\001w\030\001 \002(\001\022\t\n\001x\030\002 "
+    "\002(\001\022\t\n\001y\030\003 \002(\001\022\t\n\001z\030\004 \002(\001\"_\n\016Vector3Stam"
+    "ped\022$\n\005stamp\030\001 \002(\0132\025.MaxBotMessages.Stam"
+    "p\022\'\n\006vector\030\002 \002(\0132\027.MaxBotMessages.Vecto"
+    "r3\"i\n\021QuaternionStamped\022$\n\005stamp\030\001 \002(\0132\025"
+    ".MaxBotMessages.Stamp\022.\n\nquaternion\030\002 \002("
+    "\0132\032.MaxBotMessages.Quaternion", 349);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Vector.proto", &protobuf_RegisterTypes);
   Vector3::default_instance_ = new Vector3();
+  Quaternion::default_instance_ = new Quaternion();
   Vector3Stamped::default_instance_ = new Vector3Stamped();
+  QuaternionStamped::default_instance_ = new QuaternionStamped();
   Vector3::default_instance_->InitAsDefaultInstance();
+  Quaternion::default_instance_->InitAsDefaultInstance();
   Vector3Stamped::default_instance_->InitAsDefaultInstance();
+  QuaternionStamped::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Vector_2eproto);
 }
 
@@ -125,16 +182,26 @@ struct StaticDescriptorInitializer_Vector_2eproto {
   }
 } static_descriptor_initializer_Vector_2eproto_;
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
+static void MergeFromFail(int line) {
+  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
+}
+
+}  // namespace
+
+
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Vector3::kXFieldNumber;
 const int Vector3::kYFieldNumber;
 const int Vector3::kZFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Vector3::Vector3()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.Vector3)
 }
@@ -143,7 +210,8 @@ void Vector3::InitAsDefaultInstance() {
 }
 
 Vector3::Vector3(const Vector3& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Vector3)
@@ -184,28 +252,32 @@ const Vector3& Vector3::default_instance() {
 
 Vector3* Vector3::default_instance_ = NULL;
 
-Vector3* Vector3::New() const {
-  return new Vector3;
+Vector3* Vector3::New(::google::protobuf::Arena* arena) const {
+  Vector3* n = new Vector3;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Vector3::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<Vector3*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Vector3*>(16)->f)
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
   ZR_(x_, z_);
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Vector3::MergePartialFromCodedStream(
@@ -302,7 +374,7 @@ void Vector3::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->z(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -327,7 +399,7 @@ void Vector3::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->z(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -335,27 +407,43 @@ void Vector3::SerializeWithCachedSizes(
   return target;
 }
 
+int Vector3::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_x()) {
+    // required double x = 1;
+    total_size += 1 + 8;
+  }
+
+  if (has_y()) {
+    // required double y = 2;
+    total_size += 1 + 8;
+  }
+
+  if (has_z()) {
+    // required double z = 3;
+    total_size += 1 + 8;
+  }
+
+  return total_size;
+}
 int Vector3::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
     // required double x = 1;
-    if (has_x()) {
-      total_size += 1 + 8;
-    }
+    total_size += 1 + 8;
 
     // required double y = 2;
-    if (has_y()) {
-      total_size += 1 + 8;
-    }
+    total_size += 1 + 8;
 
     // required double z = 3;
-    if (has_z()) {
-      total_size += 1 + 8;
-    }
+    total_size += 1 + 8;
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -367,10 +455,10 @@ int Vector3::ByteSize() const {
 }
 
 void Vector3::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const Vector3* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Vector3*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Vector3* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Vector3>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -379,7 +467,7 @@ void Vector3::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void Vector3::MergeFrom(const Vector3& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -391,7 +479,9 @@ void Vector3::MergeFrom(const Vector3& from) {
       set_z(from.z());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void Vector3::CopyFrom(const ::google::protobuf::Message& from) {
@@ -413,14 +503,16 @@ bool Vector3::IsInitialized() const {
 }
 
 void Vector3::Swap(Vector3* other) {
-  if (other != this) {
-    std::swap(x_, other->x_);
-    std::swap(y_, other->y_);
-    std::swap(z_, other->z_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Vector3::InternalSwap(Vector3* other) {
+  std::swap(x_, other->x_);
+  std::swap(y_, other->y_);
+  std::swap(z_, other->z_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Vector3::GetMetadata() const {
@@ -431,16 +523,563 @@ void Vector3::Swap(Vector3* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Vector3
+
+// required double x = 1;
+bool Vector3::has_x() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Vector3::set_has_x() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Vector3::clear_has_x() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Vector3::clear_x() {
+  x_ = 0;
+  clear_has_x();
+}
+ double Vector3::x() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Vector3.x)
+  return x_;
+}
+ void Vector3::set_x(double value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Vector3.x)
+}
+
+// required double y = 2;
+bool Vector3::has_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Vector3::set_has_y() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Vector3::clear_has_y() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Vector3::clear_y() {
+  y_ = 0;
+  clear_has_y();
+}
+ double Vector3::y() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Vector3.y)
+  return y_;
+}
+ void Vector3::set_y(double value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Vector3.y)
+}
+
+// required double z = 3;
+bool Vector3::has_z() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Vector3::set_has_z() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Vector3::clear_has_z() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Vector3::clear_z() {
+  z_ = 0;
+  clear_has_z();
+}
+ double Vector3::z() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Vector3.z)
+  return z_;
+}
+ void Vector3::set_z(double value) {
+  set_has_z();
+  z_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Vector3.z)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Quaternion::kWFieldNumber;
+const int Quaternion::kXFieldNumber;
+const int Quaternion::kYFieldNumber;
+const int Quaternion::kZFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Quaternion::Quaternion()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:MaxBotMessages.Quaternion)
+}
+
+void Quaternion::InitAsDefaultInstance() {
+}
+
+Quaternion::Quaternion(const Quaternion& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Quaternion)
+}
+
+void Quaternion::SharedCtor() {
+  _cached_size_ = 0;
+  w_ = 0;
+  x_ = 0;
+  y_ = 0;
+  z_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+Quaternion::~Quaternion() {
+  // @@protoc_insertion_point(destructor:MaxBotMessages.Quaternion)
+  SharedDtor();
+}
+
+void Quaternion::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void Quaternion::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Quaternion::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Quaternion_descriptor_;
+}
+
+const Quaternion& Quaternion::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Vector_2eproto();
+  return *default_instance_;
+}
+
+Quaternion* Quaternion::default_instance_ = NULL;
+
+Quaternion* Quaternion::New(::google::protobuf::Arena* arena) const {
+  Quaternion* n = new Quaternion;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Quaternion::Clear() {
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Quaternion*>(16)->f)
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(w_, z_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool Quaternion::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:MaxBotMessages.Quaternion)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required double w = 1;
+      case 1: {
+        if (tag == 9) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &w_)));
+          set_has_w();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(17)) goto parse_x;
+        break;
+      }
+
+      // required double x = 2;
+      case 2: {
+        if (tag == 17) {
+         parse_x:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &x_)));
+          set_has_x();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(25)) goto parse_y;
+        break;
+      }
+
+      // required double y = 3;
+      case 3: {
+        if (tag == 25) {
+         parse_y:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &y_)));
+          set_has_y();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(33)) goto parse_z;
+        break;
+      }
+
+      // required double z = 4;
+      case 4: {
+        if (tag == 33) {
+         parse_z:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &z_)));
+          set_has_z();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:MaxBotMessages.Quaternion)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:MaxBotMessages.Quaternion)
+  return false;
+#undef DO_
+}
+
+void Quaternion::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:MaxBotMessages.Quaternion)
+  // required double w = 1;
+  if (has_w()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->w(), output);
+  }
+
+  // required double x = 2;
+  if (has_x()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->x(), output);
+  }
+
+  // required double y = 3;
+  if (has_y()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->y(), output);
+  }
+
+  // required double z = 4;
+  if (has_z()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->z(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:MaxBotMessages.Quaternion)
+}
+
+::google::protobuf::uint8* Quaternion::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:MaxBotMessages.Quaternion)
+  // required double w = 1;
+  if (has_w()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->w(), target);
+  }
+
+  // required double x = 2;
+  if (has_x()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->x(), target);
+  }
+
+  // required double y = 3;
+  if (has_y()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->y(), target);
+  }
+
+  // required double z = 4;
+  if (has_z()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->z(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:MaxBotMessages.Quaternion)
+  return target;
+}
+
+int Quaternion::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_w()) {
+    // required double w = 1;
+    total_size += 1 + 8;
+  }
+
+  if (has_x()) {
+    // required double x = 2;
+    total_size += 1 + 8;
+  }
+
+  if (has_y()) {
+    // required double y = 3;
+    total_size += 1 + 8;
+  }
+
+  if (has_z()) {
+    // required double z = 4;
+    total_size += 1 + 8;
+  }
+
+  return total_size;
+}
+int Quaternion::ByteSize() const {
+  int total_size = 0;
+
+  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
+    // required double w = 1;
+    total_size += 1 + 8;
+
+    // required double x = 2;
+    total_size += 1 + 8;
+
+    // required double y = 3;
+    total_size += 1 + 8;
+
+    // required double z = 4;
+    total_size += 1 + 8;
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Quaternion::MergeFrom(const ::google::protobuf::Message& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Quaternion* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Quaternion>(
+          &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void Quaternion::MergeFrom(const Quaternion& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_w()) {
+      set_w(from.w());
+    }
+    if (from.has_x()) {
+      set_x(from.x());
+    }
+    if (from.has_y()) {
+      set_y(from.y());
+    }
+    if (from.has_z()) {
+      set_z(from.z());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
+}
+
+void Quaternion::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Quaternion::CopyFrom(const Quaternion& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Quaternion::IsInitialized() const {
+  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
+
+  return true;
+}
+
+void Quaternion::Swap(Quaternion* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Quaternion::InternalSwap(Quaternion* other) {
+  std::swap(w_, other->w_);
+  std::swap(x_, other->x_);
+  std::swap(y_, other->y_);
+  std::swap(z_, other->z_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Quaternion::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Quaternion_descriptor_;
+  metadata.reflection = Quaternion_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Quaternion
+
+// required double w = 1;
+bool Quaternion::has_w() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Quaternion::set_has_w() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Quaternion::clear_has_w() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Quaternion::clear_w() {
+  w_ = 0;
+  clear_has_w();
+}
+ double Quaternion::w() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Quaternion.w)
+  return w_;
+}
+ void Quaternion::set_w(double value) {
+  set_has_w();
+  w_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Quaternion.w)
+}
+
+// required double x = 2;
+bool Quaternion::has_x() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Quaternion::set_has_x() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Quaternion::clear_has_x() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Quaternion::clear_x() {
+  x_ = 0;
+  clear_has_x();
+}
+ double Quaternion::x() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Quaternion.x)
+  return x_;
+}
+ void Quaternion::set_x(double value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Quaternion.x)
+}
+
+// required double y = 3;
+bool Quaternion::has_y() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Quaternion::set_has_y() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Quaternion::clear_has_y() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Quaternion::clear_y() {
+  y_ = 0;
+  clear_has_y();
+}
+ double Quaternion::y() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Quaternion.y)
+  return y_;
+}
+ void Quaternion::set_y(double value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Quaternion.y)
+}
+
+// required double z = 4;
+bool Quaternion::has_z() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Quaternion::set_has_z() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Quaternion::clear_has_z() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Quaternion::clear_z() {
+  z_ = 0;
+  clear_has_z();
+}
+ double Quaternion::z() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Quaternion.z)
+  return z_;
+}
+ void Quaternion::set_z(double value) {
+  set_has_z();
+  z_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Quaternion.z)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Vector3Stamped::kStampFieldNumber;
 const int Vector3Stamped::kVectorFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Vector3Stamped::Vector3Stamped()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.Vector3Stamped)
 }
@@ -451,7 +1090,8 @@ void Vector3Stamped::InitAsDefaultInstance() {
 }
 
 Vector3Stamped::Vector3Stamped(const Vector3Stamped& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Vector3Stamped)
@@ -493,12 +1133,16 @@ const Vector3Stamped& Vector3Stamped::default_instance() {
 
 Vector3Stamped* Vector3Stamped::default_instance_ = NULL;
 
-Vector3Stamped* Vector3Stamped::New() const {
-  return new Vector3Stamped;
+Vector3Stamped* Vector3Stamped::New(::google::protobuf::Arena* arena) const {
+  Vector3Stamped* n = new Vector3Stamped;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Vector3Stamped::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_stamp()) {
       if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
     }
@@ -507,7 +1151,9 @@ void Vector3Stamped::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Vector3Stamped::MergePartialFromCodedStream(
@@ -573,16 +1219,16 @@ void Vector3Stamped::SerializeWithCachedSizes(
   // required .MaxBotMessages.Stamp stamp = 1;
   if (has_stamp()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->stamp(), output);
+      1, *this->stamp_, output);
   }
 
   // required .MaxBotMessages.Vector3 vector = 2;
   if (has_vector()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->vector(), output);
+      2, *this->vector_, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -596,17 +1242,17 @@ void Vector3Stamped::SerializeWithCachedSizes(
   if (has_stamp()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, this->stamp(), target);
+        1, *this->stamp_, target);
   }
 
   // required .MaxBotMessages.Vector3 vector = 2;
   if (has_vector()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->vector(), target);
+        2, *this->vector_, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -614,26 +1260,43 @@ void Vector3Stamped::SerializeWithCachedSizes(
   return target;
 }
 
+int Vector3Stamped::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_vector()) {
+    // required .MaxBotMessages.Vector3 vector = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->vector_);
+  }
+
+  return total_size;
+}
 int Vector3Stamped::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required .MaxBotMessages.Stamp stamp = 1;
-    if (has_stamp()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->stamp());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
 
     // required .MaxBotMessages.Vector3 vector = 2;
-    if (has_vector()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->vector());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->vector_);
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -645,10 +1308,10 @@ int Vector3Stamped::ByteSize() const {
 }
 
 void Vector3Stamped::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const Vector3Stamped* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Vector3Stamped*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Vector3Stamped* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Vector3Stamped>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -657,7 +1320,7 @@ void Vector3Stamped::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void Vector3Stamped::MergeFrom(const Vector3Stamped& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_stamp()) {
       mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
@@ -666,7 +1329,9 @@ void Vector3Stamped::MergeFrom(const Vector3Stamped& from) {
       mutable_vector()->::MaxBotMessages::Vector3::MergeFrom(from.vector());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void Vector3Stamped::CopyFrom(const ::google::protobuf::Message& from) {
@@ -685,22 +1350,24 @@ bool Vector3Stamped::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   if (has_stamp()) {
-    if (!this->stamp().IsInitialized()) return false;
+    if (!this->stamp_->IsInitialized()) return false;
   }
   if (has_vector()) {
-    if (!this->vector().IsInitialized()) return false;
+    if (!this->vector_->IsInitialized()) return false;
   }
   return true;
 }
 
 void Vector3Stamped::Swap(Vector3Stamped* other) {
-  if (other != this) {
-    std::swap(stamp_, other->stamp_);
-    std::swap(vector_, other->vector_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Vector3Stamped::InternalSwap(Vector3Stamped* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(vector_, other->vector_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Vector3Stamped::GetMetadata() const {
@@ -711,6 +1378,494 @@ void Vector3Stamped::Swap(Vector3Stamped* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Vector3Stamped
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool Vector3Stamped::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Vector3Stamped::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Vector3Stamped::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Vector3Stamped::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& Vector3Stamped::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Vector3Stamped.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* Vector3Stamped::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Vector3Stamped.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* Vector3Stamped::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void Vector3Stamped::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Vector3Stamped.stamp)
+}
+
+// required .MaxBotMessages.Vector3 vector = 2;
+bool Vector3Stamped::has_vector() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Vector3Stamped::set_has_vector() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Vector3Stamped::clear_has_vector() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Vector3Stamped::clear_vector() {
+  if (vector_ != NULL) vector_->::MaxBotMessages::Vector3::Clear();
+  clear_has_vector();
+}
+const ::MaxBotMessages::Vector3& Vector3Stamped::vector() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Vector3Stamped.vector)
+  return vector_ != NULL ? *vector_ : *default_instance_->vector_;
+}
+::MaxBotMessages::Vector3* Vector3Stamped::mutable_vector() {
+  set_has_vector();
+  if (vector_ == NULL) {
+    vector_ = new ::MaxBotMessages::Vector3;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Vector3Stamped.vector)
+  return vector_;
+}
+::MaxBotMessages::Vector3* Vector3Stamped::release_vector() {
+  clear_has_vector();
+  ::MaxBotMessages::Vector3* temp = vector_;
+  vector_ = NULL;
+  return temp;
+}
+void Vector3Stamped::set_allocated_vector(::MaxBotMessages::Vector3* vector) {
+  delete vector_;
+  vector_ = vector;
+  if (vector) {
+    set_has_vector();
+  } else {
+    clear_has_vector();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Vector3Stamped.vector)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int QuaternionStamped::kStampFieldNumber;
+const int QuaternionStamped::kQuaternionFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+QuaternionStamped::QuaternionStamped()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:MaxBotMessages.QuaternionStamped)
+}
+
+void QuaternionStamped::InitAsDefaultInstance() {
+  stamp_ = const_cast< ::MaxBotMessages::Stamp*>(&::MaxBotMessages::Stamp::default_instance());
+  quaternion_ = const_cast< ::MaxBotMessages::Quaternion*>(&::MaxBotMessages::Quaternion::default_instance());
+}
+
+QuaternionStamped::QuaternionStamped(const QuaternionStamped& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:MaxBotMessages.QuaternionStamped)
+}
+
+void QuaternionStamped::SharedCtor() {
+  _cached_size_ = 0;
+  stamp_ = NULL;
+  quaternion_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+QuaternionStamped::~QuaternionStamped() {
+  // @@protoc_insertion_point(destructor:MaxBotMessages.QuaternionStamped)
+  SharedDtor();
+}
+
+void QuaternionStamped::SharedDtor() {
+  if (this != default_instance_) {
+    delete stamp_;
+    delete quaternion_;
+  }
+}
+
+void QuaternionStamped::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* QuaternionStamped::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return QuaternionStamped_descriptor_;
+}
+
+const QuaternionStamped& QuaternionStamped::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Vector_2eproto();
+  return *default_instance_;
+}
+
+QuaternionStamped* QuaternionStamped::default_instance_ = NULL;
+
+QuaternionStamped* QuaternionStamped::New(::google::protobuf::Arena* arena) const {
+  QuaternionStamped* n = new QuaternionStamped;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void QuaternionStamped::Clear() {
+  if (_has_bits_[0 / 32] & 3u) {
+    if (has_stamp()) {
+      if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+    }
+    if (has_quaternion()) {
+      if (quaternion_ != NULL) quaternion_->::MaxBotMessages::Quaternion::Clear();
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool QuaternionStamped::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:MaxBotMessages.QuaternionStamped)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .MaxBotMessages.Stamp stamp = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_stamp()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_quaternion;
+        break;
+      }
+
+      // required .MaxBotMessages.Quaternion quaternion = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_quaternion:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_quaternion()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:MaxBotMessages.QuaternionStamped)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:MaxBotMessages.QuaternionStamped)
+  return false;
+#undef DO_
+}
+
+void QuaternionStamped::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:MaxBotMessages.QuaternionStamped)
+  // required .MaxBotMessages.Stamp stamp = 1;
+  if (has_stamp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->stamp_, output);
+  }
+
+  // required .MaxBotMessages.Quaternion quaternion = 2;
+  if (has_quaternion()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *this->quaternion_, output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:MaxBotMessages.QuaternionStamped)
+}
+
+::google::protobuf::uint8* QuaternionStamped::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:MaxBotMessages.QuaternionStamped)
+  // required .MaxBotMessages.Stamp stamp = 1;
+  if (has_stamp()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->stamp_, target);
+  }
+
+  // required .MaxBotMessages.Quaternion quaternion = 2;
+  if (has_quaternion()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, *this->quaternion_, target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:MaxBotMessages.QuaternionStamped)
+  return target;
+}
+
+int QuaternionStamped::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_quaternion()) {
+    // required .MaxBotMessages.Quaternion quaternion = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->quaternion_);
+  }
+
+  return total_size;
+}
+int QuaternionStamped::ByteSize() const {
+  int total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+
+    // required .MaxBotMessages.Quaternion quaternion = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->quaternion_);
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void QuaternionStamped::MergeFrom(const ::google::protobuf::Message& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const QuaternionStamped* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const QuaternionStamped>(
+          &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void QuaternionStamped::MergeFrom(const QuaternionStamped& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_stamp()) {
+      mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
+    }
+    if (from.has_quaternion()) {
+      mutable_quaternion()->::MaxBotMessages::Quaternion::MergeFrom(from.quaternion());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
+}
+
+void QuaternionStamped::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void QuaternionStamped::CopyFrom(const QuaternionStamped& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool QuaternionStamped::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  if (has_stamp()) {
+    if (!this->stamp_->IsInitialized()) return false;
+  }
+  if (has_quaternion()) {
+    if (!this->quaternion_->IsInitialized()) return false;
+  }
+  return true;
+}
+
+void QuaternionStamped::Swap(QuaternionStamped* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void QuaternionStamped::InternalSwap(QuaternionStamped* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(quaternion_, other->quaternion_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata QuaternionStamped::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = QuaternionStamped_descriptor_;
+  metadata.reflection = QuaternionStamped_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// QuaternionStamped
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool QuaternionStamped::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void QuaternionStamped::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void QuaternionStamped::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void QuaternionStamped::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& QuaternionStamped::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.QuaternionStamped.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* QuaternionStamped::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.QuaternionStamped.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* QuaternionStamped::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void QuaternionStamped::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.QuaternionStamped.stamp)
+}
+
+// required .MaxBotMessages.Quaternion quaternion = 2;
+bool QuaternionStamped::has_quaternion() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void QuaternionStamped::set_has_quaternion() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void QuaternionStamped::clear_has_quaternion() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void QuaternionStamped::clear_quaternion() {
+  if (quaternion_ != NULL) quaternion_->::MaxBotMessages::Quaternion::Clear();
+  clear_has_quaternion();
+}
+const ::MaxBotMessages::Quaternion& QuaternionStamped::quaternion() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.QuaternionStamped.quaternion)
+  return quaternion_ != NULL ? *quaternion_ : *default_instance_->quaternion_;
+}
+::MaxBotMessages::Quaternion* QuaternionStamped::mutable_quaternion() {
+  set_has_quaternion();
+  if (quaternion_ == NULL) {
+    quaternion_ = new ::MaxBotMessages::Quaternion;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.QuaternionStamped.quaternion)
+  return quaternion_;
+}
+::MaxBotMessages::Quaternion* QuaternionStamped::release_quaternion() {
+  clear_has_quaternion();
+  ::MaxBotMessages::Quaternion* temp = quaternion_;
+  quaternion_ = NULL;
+  return temp;
+}
+void QuaternionStamped::set_allocated_quaternion(::MaxBotMessages::Quaternion* quaternion) {
+  delete quaternion_;
+  quaternion_ = quaternion;
+  if (quaternion) {
+    set_has_quaternion();
+  } else {
+    clear_has_quaternion();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.QuaternionStamped.quaternion)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

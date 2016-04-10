@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -39,16 +40,16 @@ void protobuf_AssignDesc_Range_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RangeStamped, range_),
   };
   RangeStamped_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       RangeStamped_descriptor_,
       RangeStamped::default_instance_,
       RangeStamped_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RangeStamped, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RangeStamped, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(RangeStamped));
+      -1,
+      sizeof(RangeStamped),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RangeStamped, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -62,7 +63,7 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    RangeStamped_descriptor_, &RangeStamped::default_instance());
+      RangeStamped_descriptor_, &RangeStamped::default_instance());
 }
 
 }  // namespace
@@ -99,15 +100,25 @@ struct StaticDescriptorInitializer_Range_2eproto {
   }
 } static_descriptor_initializer_Range_2eproto_;
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
+static void MergeFromFail(int line) {
+  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
+}
+
+}  // namespace
+
+
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int RangeStamped::kStampFieldNumber;
 const int RangeStamped::kRangeFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 RangeStamped::RangeStamped()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.RangeStamped)
 }
@@ -118,7 +129,8 @@ void RangeStamped::InitAsDefaultInstance() {
 }
 
 RangeStamped::RangeStamped(const RangeStamped& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.RangeStamped)
@@ -160,12 +172,16 @@ const RangeStamped& RangeStamped::default_instance() {
 
 RangeStamped* RangeStamped::default_instance_ = NULL;
 
-RangeStamped* RangeStamped::New() const {
-  return new RangeStamped;
+RangeStamped* RangeStamped::New(::google::protobuf::Arena* arena) const {
+  RangeStamped* n = new RangeStamped;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void RangeStamped::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_stamp()) {
       if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
     }
@@ -174,7 +190,9 @@ void RangeStamped::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool RangeStamped::MergePartialFromCodedStream(
@@ -240,16 +258,16 @@ void RangeStamped::SerializeWithCachedSizes(
   // required .MaxBotMessages.Stamp stamp = 1;
   if (has_stamp()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->stamp(), output);
+      1, *this->stamp_, output);
   }
 
   // required .MaxBotMessages.Double range = 2;
   if (has_range()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->range(), output);
+      2, *this->range_, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -263,17 +281,17 @@ void RangeStamped::SerializeWithCachedSizes(
   if (has_stamp()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, this->stamp(), target);
+        1, *this->stamp_, target);
   }
 
   // required .MaxBotMessages.Double range = 2;
   if (has_range()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->range(), target);
+        2, *this->range_, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -281,26 +299,43 @@ void RangeStamped::SerializeWithCachedSizes(
   return target;
 }
 
+int RangeStamped::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_range()) {
+    // required .MaxBotMessages.Double range = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->range_);
+  }
+
+  return total_size;
+}
 int RangeStamped::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required .MaxBotMessages.Stamp stamp = 1;
-    if (has_stamp()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->stamp());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
 
     // required .MaxBotMessages.Double range = 2;
-    if (has_range()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->range());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->range_);
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -312,10 +347,10 @@ int RangeStamped::ByteSize() const {
 }
 
 void RangeStamped::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const RangeStamped* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const RangeStamped*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const RangeStamped* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const RangeStamped>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -324,7 +359,7 @@ void RangeStamped::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void RangeStamped::MergeFrom(const RangeStamped& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_stamp()) {
       mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
@@ -333,7 +368,9 @@ void RangeStamped::MergeFrom(const RangeStamped& from) {
       mutable_range()->::MaxBotMessages::Double::MergeFrom(from.range());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void RangeStamped::CopyFrom(const ::google::protobuf::Message& from) {
@@ -352,22 +389,24 @@ bool RangeStamped::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   if (has_stamp()) {
-    if (!this->stamp().IsInitialized()) return false;
+    if (!this->stamp_->IsInitialized()) return false;
   }
   if (has_range()) {
-    if (!this->range().IsInitialized()) return false;
+    if (!this->range_->IsInitialized()) return false;
   }
   return true;
 }
 
 void RangeStamped::Swap(RangeStamped* other) {
-  if (other != this) {
-    std::swap(stamp_, other->stamp_);
-    std::swap(range_, other->range_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void RangeStamped::InternalSwap(RangeStamped* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(range_, other->range_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata RangeStamped::GetMetadata() const {
@@ -378,6 +417,96 @@ void RangeStamped::Swap(RangeStamped* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// RangeStamped
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool RangeStamped::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void RangeStamped::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void RangeStamped::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void RangeStamped::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& RangeStamped::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.RangeStamped.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* RangeStamped::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.RangeStamped.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* RangeStamped::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void RangeStamped::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.RangeStamped.stamp)
+}
+
+// required .MaxBotMessages.Double range = 2;
+bool RangeStamped::has_range() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void RangeStamped::set_has_range() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void RangeStamped::clear_has_range() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void RangeStamped::clear_range() {
+  if (range_ != NULL) range_->::MaxBotMessages::Double::Clear();
+  clear_has_range();
+}
+const ::MaxBotMessages::Double& RangeStamped::range() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.RangeStamped.range)
+  return range_ != NULL ? *range_ : *default_instance_->range_;
+}
+::MaxBotMessages::Double* RangeStamped::mutable_range() {
+  set_has_range();
+  if (range_ == NULL) {
+    range_ = new ::MaxBotMessages::Double;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.RangeStamped.range)
+  return range_;
+}
+::MaxBotMessages::Double* RangeStamped::release_range() {
+  clear_has_range();
+  ::MaxBotMessages::Double* temp = range_;
+  range_ = NULL;
+  return temp;
+}
+void RangeStamped::set_allocated_range(::MaxBotMessages::Double* range) {
+  delete range_;
+  range_ = range;
+  if (range) {
+    set_has_range();
+  } else {
+    clear_has_range();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.RangeStamped.range)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

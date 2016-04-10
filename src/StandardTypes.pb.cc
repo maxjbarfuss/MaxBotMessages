@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -53,94 +54,94 @@ void protobuf_AssignDesc_StandardTypes_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Int, value_),
   };
   Int_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Int_descriptor_,
       Int::default_instance_,
       Int_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Int, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Int, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Int));
+      -1,
+      sizeof(Int),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Int, _internal_metadata_),
+      -1);
   Double_descriptor_ = file->message_type(1);
   static const int Double_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Double, value_),
   };
   Double_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       Double_descriptor_,
       Double::default_instance_,
       Double_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Double, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Double, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(Double));
+      -1,
+      sizeof(Double),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Double, _internal_metadata_),
+      -1);
   String_descriptor_ = file->message_type(2);
   static const int String_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(String, value_),
   };
   String_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       String_descriptor_,
       String::default_instance_,
       String_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(String, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(String, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(String));
+      -1,
+      sizeof(String),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(String, _internal_metadata_),
+      -1);
   IntStamped_descriptor_ = file->message_type(3);
   static const int IntStamped_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IntStamped, stamp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IntStamped, int__),
   };
   IntStamped_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       IntStamped_descriptor_,
       IntStamped::default_instance_,
       IntStamped_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IntStamped, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IntStamped, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(IntStamped));
+      -1,
+      sizeof(IntStamped),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(IntStamped, _internal_metadata_),
+      -1);
   DoubleStamped_descriptor_ = file->message_type(4);
   static const int DoubleStamped_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DoubleStamped, stamp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DoubleStamped, double__),
   };
   DoubleStamped_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       DoubleStamped_descriptor_,
       DoubleStamped::default_instance_,
       DoubleStamped_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DoubleStamped, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DoubleStamped, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(DoubleStamped));
+      -1,
+      sizeof(DoubleStamped),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DoubleStamped, _internal_metadata_),
+      -1);
   StringStamped_descriptor_ = file->message_type(5);
   static const int StringStamped_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StringStamped, stamp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StringStamped, string_),
   };
   StringStamped_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       StringStamped_descriptor_,
       StringStamped::default_instance_,
       StringStamped_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StringStamped, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StringStamped, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(StringStamped));
+      -1,
+      sizeof(StringStamped),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StringStamped, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -154,17 +155,17 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Int_descriptor_, &Int::default_instance());
+      Int_descriptor_, &Int::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Double_descriptor_, &Double::default_instance());
+      Double_descriptor_, &Double::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    String_descriptor_, &String::default_instance());
+      String_descriptor_, &String::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    IntStamped_descriptor_, &IntStamped::default_instance());
+      IntStamped_descriptor_, &IntStamped::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    DoubleStamped_descriptor_, &DoubleStamped::default_instance());
+      DoubleStamped_descriptor_, &DoubleStamped::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    StringStamped_descriptor_, &StringStamped::default_instance());
+      StringStamped_descriptor_, &StringStamped::default_instance());
 }
 
 }  // namespace
@@ -226,14 +227,24 @@ struct StaticDescriptorInitializer_StandardTypes_2eproto {
   }
 } static_descriptor_initializer_StandardTypes_2eproto_;
 
+namespace {
+
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
+static void MergeFromFail(int line) {
+  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
+}
+
+}  // namespace
+
+
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Int::kValueFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Int::Int()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.Int)
 }
@@ -242,7 +253,8 @@ void Int::InitAsDefaultInstance() {
 }
 
 Int::Int(const Int& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Int)
@@ -281,14 +293,20 @@ const Int& Int::default_instance() {
 
 Int* Int::default_instance_ = NULL;
 
-Int* Int::New() const {
-  return new Int;
+Int* Int::New(::google::protobuf::Arena* arena) const {
+  Int* n = new Int;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Int::Clear() {
   value_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Int::MergePartialFromCodedStream(
@@ -345,7 +363,7 @@ void Int::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->value(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -360,7 +378,7 @@ void Int::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->value(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -371,16 +389,13 @@ void Int::SerializeWithCachedSizes(
 int Int::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required int32 value = 1;
-    if (has_value()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->value());
-    }
-
+  // required int32 value = 1;
+  if (has_value()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->value());
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -392,10 +407,10 @@ int Int::ByteSize() const {
 }
 
 void Int::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const Int* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Int*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Int* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Int>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -404,13 +419,15 @@ void Int::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void Int::MergeFrom(const Int& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_value()) {
       set_value(from.value());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void Int::CopyFrom(const ::google::protobuf::Message& from) {
@@ -432,12 +449,14 @@ bool Int::IsInitialized() const {
 }
 
 void Int::Swap(Int* other) {
-  if (other != this) {
-    std::swap(value_, other->value_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Int::InternalSwap(Int* other) {
+  std::swap(value_, other->value_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Int::GetMetadata() const {
@@ -448,15 +467,43 @@ void Int::Swap(Int* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Int
+
+// required int32 value = 1;
+bool Int::has_value() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Int::set_has_value() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Int::clear_has_value() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Int::clear_value() {
+  value_ = 0;
+  clear_has_value();
+}
+ ::google::protobuf::int32 Int::value() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Int.value)
+  return value_;
+}
+ void Int::set_value(::google::protobuf::int32 value) {
+  set_has_value();
+  value_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Int.value)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Double::kValueFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Double::Double()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.Double)
 }
@@ -465,7 +512,8 @@ void Double::InitAsDefaultInstance() {
 }
 
 Double::Double(const Double& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Double)
@@ -504,14 +552,20 @@ const Double& Double::default_instance() {
 
 Double* Double::default_instance_ = NULL;
 
-Double* Double::New() const {
-  return new Double;
+Double* Double::New(::google::protobuf::Arena* arena) const {
+  Double* n = new Double;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void Double::Clear() {
   value_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool Double::MergePartialFromCodedStream(
@@ -568,7 +622,7 @@ void Double::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->value(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -583,7 +637,7 @@ void Double::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->value(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -594,14 +648,11 @@ void Double::SerializeWithCachedSizes(
 int Double::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required double value = 1;
-    if (has_value()) {
-      total_size += 1 + 8;
-    }
-
+  // required double value = 1;
+  if (has_value()) {
+    total_size += 1 + 8;
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -613,10 +664,10 @@ int Double::ByteSize() const {
 }
 
 void Double::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const Double* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const Double*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Double* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Double>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -625,13 +676,15 @@ void Double::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void Double::MergeFrom(const Double& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_value()) {
       set_value(from.value());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void Double::CopyFrom(const ::google::protobuf::Message& from) {
@@ -653,12 +706,14 @@ bool Double::IsInitialized() const {
 }
 
 void Double::Swap(Double* other) {
-  if (other != this) {
-    std::swap(value_, other->value_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Double::InternalSwap(Double* other) {
+  std::swap(value_, other->value_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Double::GetMetadata() const {
@@ -669,15 +724,43 @@ void Double::Swap(Double* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Double
+
+// required double value = 1;
+bool Double::has_value() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Double::set_has_value() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Double::clear_has_value() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Double::clear_value() {
+  value_ = 0;
+  clear_has_value();
+}
+ double Double::value() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Double.value)
+  return value_;
+}
+ void Double::set_value(double value) {
+  set_has_value();
+  value_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Double.value)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int String::kValueFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 String::String()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.String)
 }
@@ -686,7 +769,8 @@ void String::InitAsDefaultInstance() {
 }
 
 String::String(const String& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.String)
@@ -695,7 +779,7 @@ String::String(const String& from)
 void String::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  value_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -705,9 +789,7 @@ String::~String() {
 }
 
 void String::SharedDtor() {
-  if (value_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete value_;
-  }
+  value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
@@ -729,18 +811,22 @@ const String& String::default_instance() {
 
 String* String::default_instance_ = NULL;
 
-String* String::New() const {
-  return new String;
+String* String::New(::google::protobuf::Arena* arena) const {
+  String* n = new String;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void String::Clear() {
   if (has_value()) {
-    if (value_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      value_->clear();
-    }
+    value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool String::MergePartialFromCodedStream(
@@ -761,7 +847,7 @@ bool String::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->value().data(), this->value().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "value");
+            "MaxBotMessages.String.value");
         } else {
           goto handle_unusual;
         }
@@ -799,12 +885,12 @@ void String::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->value().data(), this->value().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "value");
+      "MaxBotMessages.String.value");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->value(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -819,13 +905,13 @@ void String::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->value().data(), this->value().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "value");
+      "MaxBotMessages.String.value");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->value(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -836,16 +922,13 @@ void String::SerializeWithCachedSizes(
 int String::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required string value = 1;
-    if (has_value()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->value());
-    }
-
+  // required string value = 1;
+  if (has_value()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->value());
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -857,10 +940,10 @@ int String::ByteSize() const {
 }
 
 void String::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const String* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const String*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const String* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const String>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -869,13 +952,16 @@ void String::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void String::MergeFrom(const String& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_value()) {
-      set_value(from.value());
+      set_has_value();
+      value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void String::CopyFrom(const ::google::protobuf::Message& from) {
@@ -897,12 +983,14 @@ bool String::IsInitialized() const {
 }
 
 void String::Swap(String* other) {
-  if (other != this) {
-    std::swap(value_, other->value_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void String::InternalSwap(String* other) {
+  value_.Swap(&other->value_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata String::GetMetadata() const {
@@ -913,16 +1001,73 @@ void String::Swap(String* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// String
+
+// required string value = 1;
+bool String::has_value() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void String::set_has_value() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void String::clear_has_value() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void String::clear_value() {
+  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_value();
+}
+ const ::std::string& String::value() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.String.value)
+  return value_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void String::set_value(const ::std::string& value) {
+  set_has_value();
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:MaxBotMessages.String.value)
+}
+ void String::set_value(const char* value) {
+  set_has_value();
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:MaxBotMessages.String.value)
+}
+ void String::set_value(const char* value, size_t size) {
+  set_has_value();
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:MaxBotMessages.String.value)
+}
+ ::std::string* String::mutable_value() {
+  set_has_value();
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.String.value)
+  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ ::std::string* String::release_value() {
+  clear_has_value();
+  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void String::set_allocated_value(::std::string* value) {
+  if (value != NULL) {
+    set_has_value();
+  } else {
+    clear_has_value();
+  }
+  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.String.value)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int IntStamped::kStampFieldNumber;
 const int IntStamped::kIntFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 IntStamped::IntStamped()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.IntStamped)
 }
@@ -933,7 +1078,8 @@ void IntStamped::InitAsDefaultInstance() {
 }
 
 IntStamped::IntStamped(const IntStamped& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.IntStamped)
@@ -975,12 +1121,16 @@ const IntStamped& IntStamped::default_instance() {
 
 IntStamped* IntStamped::default_instance_ = NULL;
 
-IntStamped* IntStamped::New() const {
-  return new IntStamped;
+IntStamped* IntStamped::New(::google::protobuf::Arena* arena) const {
+  IntStamped* n = new IntStamped;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void IntStamped::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_stamp()) {
       if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
     }
@@ -989,7 +1139,9 @@ void IntStamped::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool IntStamped::MergePartialFromCodedStream(
@@ -1055,16 +1207,16 @@ void IntStamped::SerializeWithCachedSizes(
   // required .MaxBotMessages.Stamp stamp = 1;
   if (has_stamp()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->stamp(), output);
+      1, *this->stamp_, output);
   }
 
   // required .MaxBotMessages.Int int = 2;
   if (has_int_()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->int_(), output);
+      2, *this->int__, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1078,17 +1230,17 @@ void IntStamped::SerializeWithCachedSizes(
   if (has_stamp()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, this->stamp(), target);
+        1, *this->stamp_, target);
   }
 
   // required .MaxBotMessages.Int int = 2;
   if (has_int_()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->int_(), target);
+        2, *this->int__, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1096,26 +1248,43 @@ void IntStamped::SerializeWithCachedSizes(
   return target;
 }
 
+int IntStamped::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_int_()) {
+    // required .MaxBotMessages.Int int = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->int__);
+  }
+
+  return total_size;
+}
 int IntStamped::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required .MaxBotMessages.Stamp stamp = 1;
-    if (has_stamp()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->stamp());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
 
     // required .MaxBotMessages.Int int = 2;
-    if (has_int_()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->int_());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->int__);
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1127,10 +1296,10 @@ int IntStamped::ByteSize() const {
 }
 
 void IntStamped::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const IntStamped* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const IntStamped*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const IntStamped* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const IntStamped>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1139,7 +1308,7 @@ void IntStamped::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void IntStamped::MergeFrom(const IntStamped& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_stamp()) {
       mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
@@ -1148,7 +1317,9 @@ void IntStamped::MergeFrom(const IntStamped& from) {
       mutable_int_()->::MaxBotMessages::Int::MergeFrom(from.int_());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void IntStamped::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1167,22 +1338,24 @@ bool IntStamped::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   if (has_stamp()) {
-    if (!this->stamp().IsInitialized()) return false;
+    if (!this->stamp_->IsInitialized()) return false;
   }
   if (has_int_()) {
-    if (!this->int_().IsInitialized()) return false;
+    if (!this->int__->IsInitialized()) return false;
   }
   return true;
 }
 
 void IntStamped::Swap(IntStamped* other) {
-  if (other != this) {
-    std::swap(stamp_, other->stamp_);
-    std::swap(int__, other->int__);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void IntStamped::InternalSwap(IntStamped* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(int__, other->int__);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata IntStamped::GetMetadata() const {
@@ -1193,16 +1366,106 @@ void IntStamped::Swap(IntStamped* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// IntStamped
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool IntStamped::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void IntStamped::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void IntStamped::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void IntStamped::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& IntStamped::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.IntStamped.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* IntStamped::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.IntStamped.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* IntStamped::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void IntStamped::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.IntStamped.stamp)
+}
+
+// required .MaxBotMessages.Int int = 2;
+bool IntStamped::has_int_() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void IntStamped::set_has_int_() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void IntStamped::clear_has_int_() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void IntStamped::clear_int_() {
+  if (int__ != NULL) int__->::MaxBotMessages::Int::Clear();
+  clear_has_int_();
+}
+const ::MaxBotMessages::Int& IntStamped::int_() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.IntStamped.int)
+  return int__ != NULL ? *int__ : *default_instance_->int__;
+}
+::MaxBotMessages::Int* IntStamped::mutable_int_() {
+  set_has_int_();
+  if (int__ == NULL) {
+    int__ = new ::MaxBotMessages::Int;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.IntStamped.int)
+  return int__;
+}
+::MaxBotMessages::Int* IntStamped::release_int_() {
+  clear_has_int_();
+  ::MaxBotMessages::Int* temp = int__;
+  int__ = NULL;
+  return temp;
+}
+void IntStamped::set_allocated_int_(::MaxBotMessages::Int* int_) {
+  delete int__;
+  int__ = int_;
+  if (int_) {
+    set_has_int_();
+  } else {
+    clear_has_int_();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.IntStamped.int)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int DoubleStamped::kStampFieldNumber;
 const int DoubleStamped::kDoubleFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DoubleStamped::DoubleStamped()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.DoubleStamped)
 }
@@ -1213,7 +1476,8 @@ void DoubleStamped::InitAsDefaultInstance() {
 }
 
 DoubleStamped::DoubleStamped(const DoubleStamped& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.DoubleStamped)
@@ -1255,12 +1519,16 @@ const DoubleStamped& DoubleStamped::default_instance() {
 
 DoubleStamped* DoubleStamped::default_instance_ = NULL;
 
-DoubleStamped* DoubleStamped::New() const {
-  return new DoubleStamped;
+DoubleStamped* DoubleStamped::New(::google::protobuf::Arena* arena) const {
+  DoubleStamped* n = new DoubleStamped;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void DoubleStamped::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_stamp()) {
       if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
     }
@@ -1269,7 +1537,9 @@ void DoubleStamped::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool DoubleStamped::MergePartialFromCodedStream(
@@ -1335,16 +1605,16 @@ void DoubleStamped::SerializeWithCachedSizes(
   // required .MaxBotMessages.Stamp stamp = 1;
   if (has_stamp()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->stamp(), output);
+      1, *this->stamp_, output);
   }
 
   // required .MaxBotMessages.Double double = 2;
   if (has_double_()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->double_(), output);
+      2, *this->double__, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1358,17 +1628,17 @@ void DoubleStamped::SerializeWithCachedSizes(
   if (has_stamp()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, this->stamp(), target);
+        1, *this->stamp_, target);
   }
 
   // required .MaxBotMessages.Double double = 2;
   if (has_double_()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->double_(), target);
+        2, *this->double__, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1376,26 +1646,43 @@ void DoubleStamped::SerializeWithCachedSizes(
   return target;
 }
 
+int DoubleStamped::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_double_()) {
+    // required .MaxBotMessages.Double double = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->double__);
+  }
+
+  return total_size;
+}
 int DoubleStamped::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required .MaxBotMessages.Stamp stamp = 1;
-    if (has_stamp()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->stamp());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
 
     // required .MaxBotMessages.Double double = 2;
-    if (has_double_()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->double_());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->double__);
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1407,10 +1694,10 @@ int DoubleStamped::ByteSize() const {
 }
 
 void DoubleStamped::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const DoubleStamped* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const DoubleStamped*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const DoubleStamped* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const DoubleStamped>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1419,7 +1706,7 @@ void DoubleStamped::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void DoubleStamped::MergeFrom(const DoubleStamped& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_stamp()) {
       mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
@@ -1428,7 +1715,9 @@ void DoubleStamped::MergeFrom(const DoubleStamped& from) {
       mutable_double_()->::MaxBotMessages::Double::MergeFrom(from.double_());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void DoubleStamped::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1447,22 +1736,24 @@ bool DoubleStamped::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   if (has_stamp()) {
-    if (!this->stamp().IsInitialized()) return false;
+    if (!this->stamp_->IsInitialized()) return false;
   }
   if (has_double_()) {
-    if (!this->double_().IsInitialized()) return false;
+    if (!this->double__->IsInitialized()) return false;
   }
   return true;
 }
 
 void DoubleStamped::Swap(DoubleStamped* other) {
-  if (other != this) {
-    std::swap(stamp_, other->stamp_);
-    std::swap(double__, other->double__);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void DoubleStamped::InternalSwap(DoubleStamped* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(double__, other->double__);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata DoubleStamped::GetMetadata() const {
@@ -1473,16 +1764,106 @@ void DoubleStamped::Swap(DoubleStamped* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// DoubleStamped
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool DoubleStamped::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void DoubleStamped::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void DoubleStamped::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void DoubleStamped::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& DoubleStamped::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.DoubleStamped.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* DoubleStamped::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.DoubleStamped.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* DoubleStamped::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void DoubleStamped::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.DoubleStamped.stamp)
+}
+
+// required .MaxBotMessages.Double double = 2;
+bool DoubleStamped::has_double_() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void DoubleStamped::set_has_double_() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void DoubleStamped::clear_has_double_() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void DoubleStamped::clear_double_() {
+  if (double__ != NULL) double__->::MaxBotMessages::Double::Clear();
+  clear_has_double_();
+}
+const ::MaxBotMessages::Double& DoubleStamped::double_() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.DoubleStamped.double)
+  return double__ != NULL ? *double__ : *default_instance_->double__;
+}
+::MaxBotMessages::Double* DoubleStamped::mutable_double_() {
+  set_has_double_();
+  if (double__ == NULL) {
+    double__ = new ::MaxBotMessages::Double;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.DoubleStamped.double)
+  return double__;
+}
+::MaxBotMessages::Double* DoubleStamped::release_double_() {
+  clear_has_double_();
+  ::MaxBotMessages::Double* temp = double__;
+  double__ = NULL;
+  return temp;
+}
+void DoubleStamped::set_allocated_double_(::MaxBotMessages::Double* double_) {
+  delete double__;
+  double__ = double_;
+  if (double_) {
+    set_has_double_();
+  } else {
+    clear_has_double_();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.DoubleStamped.double)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int StringStamped::kStampFieldNumber;
 const int StringStamped::kStringFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 StringStamped::StringStamped()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:MaxBotMessages.StringStamped)
 }
@@ -1493,7 +1874,8 @@ void StringStamped::InitAsDefaultInstance() {
 }
 
 StringStamped::StringStamped(const StringStamped& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:MaxBotMessages.StringStamped)
@@ -1535,12 +1917,16 @@ const StringStamped& StringStamped::default_instance() {
 
 StringStamped* StringStamped::default_instance_ = NULL;
 
-StringStamped* StringStamped::New() const {
-  return new StringStamped;
+StringStamped* StringStamped::New(::google::protobuf::Arena* arena) const {
+  StringStamped* n = new StringStamped;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void StringStamped::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_stamp()) {
       if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
     }
@@ -1549,7 +1935,9 @@ void StringStamped::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool StringStamped::MergePartialFromCodedStream(
@@ -1615,16 +2003,16 @@ void StringStamped::SerializeWithCachedSizes(
   // required .MaxBotMessages.Stamp stamp = 1;
   if (has_stamp()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->stamp(), output);
+      1, *this->stamp_, output);
   }
 
   // required .MaxBotMessages.String string = 2;
   if (has_string()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->string(), output);
+      2, *this->string_, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1638,17 +2026,17 @@ void StringStamped::SerializeWithCachedSizes(
   if (has_stamp()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, this->stamp(), target);
+        1, *this->stamp_, target);
   }
 
   // required .MaxBotMessages.String string = 2;
   if (has_string()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->string(), target);
+        2, *this->string_, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1656,26 +2044,43 @@ void StringStamped::SerializeWithCachedSizes(
   return target;
 }
 
+int StringStamped::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_string()) {
+    // required .MaxBotMessages.String string = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->string_);
+  }
+
+  return total_size;
+}
 int StringStamped::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required .MaxBotMessages.Stamp stamp = 1;
-    if (has_stamp()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->stamp());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
 
     // required .MaxBotMessages.String string = 2;
-    if (has_string()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->string());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->string_);
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1687,10 +2092,10 @@ int StringStamped::ByteSize() const {
 }
 
 void StringStamped::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const StringStamped* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const StringStamped*>(
-      &from);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const StringStamped* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const StringStamped>(
+          &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1699,7 +2104,7 @@ void StringStamped::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void StringStamped::MergeFrom(const StringStamped& from) {
-  GOOGLE_CHECK_NE(&from, this);
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_stamp()) {
       mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
@@ -1708,7 +2113,9 @@ void StringStamped::MergeFrom(const StringStamped& from) {
       mutable_string()->::MaxBotMessages::String::MergeFrom(from.string());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void StringStamped::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1727,22 +2134,24 @@ bool StringStamped::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   if (has_stamp()) {
-    if (!this->stamp().IsInitialized()) return false;
+    if (!this->stamp_->IsInitialized()) return false;
   }
   if (has_string()) {
-    if (!this->string().IsInitialized()) return false;
+    if (!this->string_->IsInitialized()) return false;
   }
   return true;
 }
 
 void StringStamped::Swap(StringStamped* other) {
-  if (other != this) {
-    std::swap(stamp_, other->stamp_);
-    std::swap(string_, other->string_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void StringStamped::InternalSwap(StringStamped* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(string_, other->string_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata StringStamped::GetMetadata() const {
@@ -1753,6 +2162,96 @@ void StringStamped::Swap(StringStamped* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// StringStamped
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool StringStamped::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void StringStamped::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void StringStamped::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void StringStamped::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& StringStamped::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.StringStamped.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* StringStamped::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.StringStamped.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* StringStamped::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void StringStamped::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.StringStamped.stamp)
+}
+
+// required .MaxBotMessages.String string = 2;
+bool StringStamped::has_string() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void StringStamped::set_has_string() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void StringStamped::clear_has_string() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void StringStamped::clear_string() {
+  if (string_ != NULL) string_->::MaxBotMessages::String::Clear();
+  clear_has_string();
+}
+const ::MaxBotMessages::String& StringStamped::string() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.StringStamped.string)
+  return string_ != NULL ? *string_ : *default_instance_->string_;
+}
+::MaxBotMessages::String* StringStamped::mutable_string() {
+  set_has_string();
+  if (string_ == NULL) {
+    string_ = new ::MaxBotMessages::String;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.StringStamped.string)
+  return string_;
+}
+::MaxBotMessages::String* StringStamped::release_string() {
+  clear_has_string();
+  ::MaxBotMessages::String* temp = string_;
+  string_ = NULL;
+  return temp;
+}
+void StringStamped::set_allocated_string(::MaxBotMessages::String* string) {
+  delete string_;
+  string_ = string;
+  if (string) {
+    set_has_string();
+  } else {
+    clear_has_string();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.StringStamped.string)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 
