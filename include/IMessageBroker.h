@@ -15,7 +15,7 @@ public:
     virtual void Publish(const std::string &topic, google::protobuf::Message &message) = 0;
     virtual void Subscribe(const std::string &topic, SubscriptionCallback callback) = 0;
     virtual void DoWork() = 0;
-    virtual long MicrosecondsSinceEpoch() = 0;
+    virtual long long MicrosecondsSinceEpoch() = 0;
 };
 
 };

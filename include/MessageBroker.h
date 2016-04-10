@@ -30,7 +30,7 @@ private:
     std::vector<std::tuple<std::string, std::unique_ptr<zmq::socket_t>>>    _subscribers;
     std::vector<std::tuple<std::string, SubscriptionCallback>>              _subscriptions;
     int                                                                     _publisherPort;
-    std::chrono::time_point<std::chrono::high_resolution_clock>             _epoch;
+    std::chrono::time_point<std::chrono::steady_clock>                      _epoch;
     bool                                                                    _sentMulticast;
     unsigned                                                                _connectedInProcess;
 private:
@@ -46,7 +46,7 @@ public:
     void Publish(const std::string &topic, google::protobuf::Message &message);
     void Subscribe(const std::string &topic, SubscriptionCallback callback);
     bool Subscribe(std::vector<std::string> endpoints);
-    long MicrosecondsSinceEpoch();
+    long long MicrosecondsSinceEpoch();
 };
 
 };

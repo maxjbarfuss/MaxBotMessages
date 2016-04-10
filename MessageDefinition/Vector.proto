@@ -8,7 +8,19 @@ message Vector3 {
     required double z = 3;
 }
 
+message Quaternion {
+    required double w = 1;
+    required double x = 2;
+    required double y = 3;
+    required double z = 4;
+}
+
 message Vector3Stamped {
     required Stamp stamp = 1;
     required Vector3 vector = 2;
+}
+
+message QuaternionStamped {
+    required Stamp stamp = 1;
+    required Quaternion quaternion = 2;
 }
