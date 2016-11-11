@@ -9,8 +9,7 @@ std::vector<std::string>        MessageBroker::_inProcessPublishers;
 std::mutex                      MessageBroker::_inProcessMutex;
 
 MessageBroker::MessageBroker(const int threadPoolSize)
-    : _context(zmq::context_t(threadPoolSize)), _publisher(_context, ZMQ_PUB),
-    _epoch(std::chrono::steady_clock::now()), _sentMulticast(false), _connectedInProcess(1) {
+: _context(zmq::context_t(threadPoolSize)), _publisher(_context, ZMQ_PUB), _sentMulticast(false), _connectedInProcess(1) {
     BindPublisherAndLocalSubscriber();
     SendMulticast();
 }
@@ -38,7 +37,7 @@ void MessageBroker::BindPublisherAndLocalSubscriber() {
     if (!success) throw;
 }
 
-void MessageBroker::ProcessSubscriptions() {
+void MessageBroker::ProcessSubcribers() {
     for (auto subscriber=_subscribers.begin(); subscriber!=_subscribers.end(); subscriber++) {
         int status = 1;
         while(status)
@@ -47,10 +46,10 @@ void MessageBroker::ProcessSubscriptions() {
             status = std::get<1>(*subscriber)->recv(&msg, ZMQ_DONTWAIT);
             if (status == 0) break;
             std::string topic(static_cast<char*>(msg.data()), msg.size());
+            status = std::get<1>(*subscriber)->recv(&msg, ZMQ_RCVMORE);
+            std:: string msg_str(static_cast<char*>(msg.data()), msg.size());
             for (auto subscription=_subscriptions.begin(); subscription!=_subscriptions.end(); subscription++) {
                 if (std::get<0>(*subscription).compare(topic) != 0) continue;
-                status = std::get<1>(*subscriber)->recv(&msg, ZMQ_RCVMORE);
-                std:: string msg_str(static_cast<char*>(msg.data()), msg.size());
                 std::get<1>(*subscription)(msg_str);
             }
         }
@@ -128,15 +127,15 @@ void MessageBroker::Subscribe(const std::string &topic, SubscriptionCallback cal
     _subscriptions.push_back(std::make_tuple(topic, callback));
 }
 
-void MessageBroker::DoWork() {
+void MessageBroker::ProcessSubscriptions() {
     if (!_sentMulticast)
         FindPublishers();
     else
         _sentMulticast = false;
-    ProcessSubscriptions();
+    ProcessSubcribers();
 }
 
-long long MessageBroker::MicrosecondsSinceEpoch() {
+long long MessageBroker::Time() {
     auto now = std::chrono::steady_clock::now();
     return std::chrono::duration_cast<std::chrono::microseconds>(now - _epoch).count();
 }

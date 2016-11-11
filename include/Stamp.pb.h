@@ -26,6 +26,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
@@ -38,6 +39,25 @@ void protobuf_ShutdownFile_Stamp_2eproto();
 
 class Stamp;
 
+enum MeasurementType {
+  ABSOLUTE = 0,
+  DIFFERENTIAL = 1
+};
+bool MeasurementType_IsValid(int value);
+const MeasurementType MeasurementType_MIN = ABSOLUTE;
+const MeasurementType MeasurementType_MAX = DIFFERENTIAL;
+const int MeasurementType_ARRAYSIZE = MeasurementType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* MeasurementType_descriptor();
+inline const ::std::string& MeasurementType_Name(MeasurementType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    MeasurementType_descriptor(), value);
+}
+inline bool MeasurementType_Parse(
+    const ::std::string& name, MeasurementType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<MeasurementType>(
+    MeasurementType_descriptor(), name, value);
+}
 // ===================================================================
 
 class Stamp : public ::google::protobuf::Message {
@@ -116,19 +136,28 @@ class Stamp : public ::google::protobuf::Message {
   ::std::string* release_component_id();
   void set_allocated_component_id(::std::string* component_id);
 
-  // required int64 microseconds_since_epoch = 2;
-  bool has_microseconds_since_epoch() const;
-  void clear_microseconds_since_epoch();
-  static const int kMicrosecondsSinceEpochFieldNumber = 2;
-  ::google::protobuf::int64 microseconds_since_epoch() const;
-  void set_microseconds_since_epoch(::google::protobuf::int64 value);
+  // required int64 time = 2;
+  bool has_time() const;
+  void clear_time();
+  static const int kTimeFieldNumber = 2;
+  ::google::protobuf::int64 time() const;
+  void set_time(::google::protobuf::int64 value);
+
+  // optional .MaxBotMessages.MeasurementType measurement_type = 3 [default = ABSOLUTE];
+  bool has_measurement_type() const;
+  void clear_measurement_type();
+  static const int kMeasurementTypeFieldNumber = 3;
+  ::MaxBotMessages::MeasurementType measurement_type() const;
+  void set_measurement_type(::MaxBotMessages::MeasurementType value);
 
   // @@protoc_insertion_point(class_scope:MaxBotMessages.Stamp)
  private:
   inline void set_has_component_id();
   inline void clear_has_component_id();
-  inline void set_has_microseconds_since_epoch();
-  inline void clear_has_microseconds_since_epoch();
+  inline void set_has_time();
+  inline void clear_has_time();
+  inline void set_has_measurement_type();
+  inline void clear_has_measurement_type();
 
   // helper for ByteSize()
   int RequiredFieldsByteSizeFallback() const;
@@ -137,7 +166,8 @@ class Stamp : public ::google::protobuf::Message {
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr component_id_;
-  ::google::protobuf::int64 microseconds_since_epoch_;
+  ::google::protobuf::int64 time_;
+  int measurement_type_;
   friend void  protobuf_AddDesc_Stamp_2eproto();
   friend void protobuf_AssignDesc_Stamp_2eproto();
   friend void protobuf_ShutdownFile_Stamp_2eproto();
@@ -206,28 +236,53 @@ inline void Stamp::set_allocated_component_id(::std::string* component_id) {
   // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Stamp.component_id)
 }
 
-// required int64 microseconds_since_epoch = 2;
-inline bool Stamp::has_microseconds_since_epoch() const {
+// required int64 time = 2;
+inline bool Stamp::has_time() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void Stamp::set_has_microseconds_since_epoch() {
+inline void Stamp::set_has_time() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void Stamp::clear_has_microseconds_since_epoch() {
+inline void Stamp::clear_has_time() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void Stamp::clear_microseconds_since_epoch() {
-  microseconds_since_epoch_ = GOOGLE_LONGLONG(0);
-  clear_has_microseconds_since_epoch();
+inline void Stamp::clear_time() {
+  time_ = GOOGLE_LONGLONG(0);
+  clear_has_time();
 }
-inline ::google::protobuf::int64 Stamp::microseconds_since_epoch() const {
-  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.microseconds_since_epoch)
-  return microseconds_since_epoch_;
+inline ::google::protobuf::int64 Stamp::time() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.time)
+  return time_;
 }
-inline void Stamp::set_microseconds_since_epoch(::google::protobuf::int64 value) {
-  set_has_microseconds_since_epoch();
-  microseconds_since_epoch_ = value;
-  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.microseconds_since_epoch)
+inline void Stamp::set_time(::google::protobuf::int64 value) {
+  set_has_time();
+  time_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.time)
+}
+
+// optional .MaxBotMessages.MeasurementType measurement_type = 3 [default = ABSOLUTE];
+inline bool Stamp::has_measurement_type() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Stamp::set_has_measurement_type() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Stamp::clear_has_measurement_type() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Stamp::clear_measurement_type() {
+  measurement_type_ = 0;
+  clear_has_measurement_type();
+}
+inline ::MaxBotMessages::MeasurementType Stamp::measurement_type() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.measurement_type)
+  return static_cast< ::MaxBotMessages::MeasurementType >(measurement_type_);
+}
+inline void Stamp::set_measurement_type(::MaxBotMessages::MeasurementType value) {
+  assert(::MaxBotMessages::MeasurementType_IsValid(value));
+  set_has_measurement_type();
+  measurement_type_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.measurement_type)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -235,6 +290,20 @@ inline void Stamp::set_microseconds_since_epoch(::google::protobuf::int64 value)
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace MaxBotMessages
+
+#ifndef SWIG
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::MaxBotMessages::MeasurementType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::MaxBotMessages::MeasurementType>() {
+  return ::MaxBotMessages::MeasurementType_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
+#endif  // SWIG
 
 // @@protoc_insertion_point(global_scope)
 

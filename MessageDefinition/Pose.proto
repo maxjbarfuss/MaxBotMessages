@@ -23,3 +23,9 @@ message Pose3Stamped {
     required Stamp stamp = 1;
     required Pose3 pose = 2;
 }
+
+message Pose3StampedWithAccuracy {
+    required Stamp stamp = 1;
+    required Pose3 pose = 2;
+    required double accuracy = 3;
+}

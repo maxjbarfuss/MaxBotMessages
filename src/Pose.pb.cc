@@ -33,6 +33,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* Pose3Stamped_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Pose3Stamped_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Pose3StampedWithAccuracy_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Pose3StampedWithAccuracy_reflection_ = NULL;
 
 }  // namespace
 
@@ -108,6 +111,23 @@ void protobuf_AssignDesc_Pose_2eproto() {
       sizeof(Pose3Stamped),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose3Stamped, _internal_metadata_),
       -1);
+  Pose3StampedWithAccuracy_descriptor_ = file->message_type(4);
+  static const int Pose3StampedWithAccuracy_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose3StampedWithAccuracy, stamp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose3StampedWithAccuracy, pose_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose3StampedWithAccuracy, accuracy_),
+  };
+  Pose3StampedWithAccuracy_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Pose3StampedWithAccuracy_descriptor_,
+      Pose3StampedWithAccuracy::default_instance_,
+      Pose3StampedWithAccuracy_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose3StampedWithAccuracy, _has_bits_[0]),
+      -1,
+      -1,
+      sizeof(Pose3StampedWithAccuracy),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pose3StampedWithAccuracy, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -128,6 +148,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
       Pose3_descriptor_, &Pose3::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Pose3Stamped_descriptor_, &Pose3Stamped::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Pose3StampedWithAccuracy_descriptor_, &Pose3StampedWithAccuracy::default_instance());
 }
 
 }  // namespace
@@ -141,6 +163,8 @@ void protobuf_ShutdownFile_Pose_2eproto() {
   delete Pose3_reflection_;
   delete Pose3Stamped::default_instance_;
   delete Pose3Stamped_reflection_;
+  delete Pose3StampedWithAccuracy::default_instance_;
+  delete Pose3StampedWithAccuracy_reflection_;
 }
 
 void protobuf_AddDesc_Pose_2eproto() {
@@ -161,17 +185,22 @@ void protobuf_AddDesc_Pose_2eproto() {
     "ector3\022/\n\013orientation\030\002 \002(\0132\032.MaxBotMess"
     "ages.Quaternion\"Y\n\014Pose3Stamped\022$\n\005stamp"
     "\030\001 \002(\0132\025.MaxBotMessages.Stamp\022#\n\004pose\030\002 "
-    "\002(\0132\025.MaxBotMessages.Pose3", 386);
+    "\002(\0132\025.MaxBotMessages.Pose3\"w\n\030Pose3Stamp"
+    "edWithAccuracy\022$\n\005stamp\030\001 \002(\0132\025.MaxBotMe"
+    "ssages.Stamp\022#\n\004pose\030\002 \002(\0132\025.MaxBotMessa"
+    "ges.Pose3\022\020\n\010accuracy\030\003 \002(\001", 507);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Pose.proto", &protobuf_RegisterTypes);
   Pose2::default_instance_ = new Pose2();
   Pose2Stamped::default_instance_ = new Pose2Stamped();
   Pose3::default_instance_ = new Pose3();
   Pose3Stamped::default_instance_ = new Pose3Stamped();
+  Pose3StampedWithAccuracy::default_instance_ = new Pose3StampedWithAccuracy();
   Pose2::default_instance_->InitAsDefaultInstance();
   Pose2Stamped::default_instance_->InitAsDefaultInstance();
   Pose3::default_instance_->InitAsDefaultInstance();
   Pose3Stamped::default_instance_->InitAsDefaultInstance();
+  Pose3StampedWithAccuracy::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Pose_2eproto);
 }
 
@@ -1790,6 +1819,468 @@ void Pose3Stamped::set_allocated_pose(::MaxBotMessages::Pose3* pose) {
     clear_has_pose();
   }
   // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Pose3Stamped.pose)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Pose3StampedWithAccuracy::kStampFieldNumber;
+const int Pose3StampedWithAccuracy::kPoseFieldNumber;
+const int Pose3StampedWithAccuracy::kAccuracyFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Pose3StampedWithAccuracy::Pose3StampedWithAccuracy()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:MaxBotMessages.Pose3StampedWithAccuracy)
+}
+
+void Pose3StampedWithAccuracy::InitAsDefaultInstance() {
+  stamp_ = const_cast< ::MaxBotMessages::Stamp*>(&::MaxBotMessages::Stamp::default_instance());
+  pose_ = const_cast< ::MaxBotMessages::Pose3*>(&::MaxBotMessages::Pose3::default_instance());
+}
+
+Pose3StampedWithAccuracy::Pose3StampedWithAccuracy(const Pose3StampedWithAccuracy& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Pose3StampedWithAccuracy)
+}
+
+void Pose3StampedWithAccuracy::SharedCtor() {
+  _cached_size_ = 0;
+  stamp_ = NULL;
+  pose_ = NULL;
+  accuracy_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+Pose3StampedWithAccuracy::~Pose3StampedWithAccuracy() {
+  // @@protoc_insertion_point(destructor:MaxBotMessages.Pose3StampedWithAccuracy)
+  SharedDtor();
+}
+
+void Pose3StampedWithAccuracy::SharedDtor() {
+  if (this != default_instance_) {
+    delete stamp_;
+    delete pose_;
+  }
+}
+
+void Pose3StampedWithAccuracy::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Pose3StampedWithAccuracy::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Pose3StampedWithAccuracy_descriptor_;
+}
+
+const Pose3StampedWithAccuracy& Pose3StampedWithAccuracy::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Pose_2eproto();
+  return *default_instance_;
+}
+
+Pose3StampedWithAccuracy* Pose3StampedWithAccuracy::default_instance_ = NULL;
+
+Pose3StampedWithAccuracy* Pose3StampedWithAccuracy::New(::google::protobuf::Arena* arena) const {
+  Pose3StampedWithAccuracy* n = new Pose3StampedWithAccuracy;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Pose3StampedWithAccuracy::Clear() {
+  if (_has_bits_[0 / 32] & 7u) {
+    if (has_stamp()) {
+      if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+    }
+    if (has_pose()) {
+      if (pose_ != NULL) pose_->::MaxBotMessages::Pose3::Clear();
+    }
+    accuracy_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool Pose3StampedWithAccuracy::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:MaxBotMessages.Pose3StampedWithAccuracy)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .MaxBotMessages.Stamp stamp = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_stamp()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_pose;
+        break;
+      }
+
+      // required .MaxBotMessages.Pose3 pose = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_pose:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_pose()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(25)) goto parse_accuracy;
+        break;
+      }
+
+      // required double accuracy = 3;
+      case 3: {
+        if (tag == 25) {
+         parse_accuracy:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &accuracy_)));
+          set_has_accuracy();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:MaxBotMessages.Pose3StampedWithAccuracy)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:MaxBotMessages.Pose3StampedWithAccuracy)
+  return false;
+#undef DO_
+}
+
+void Pose3StampedWithAccuracy::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:MaxBotMessages.Pose3StampedWithAccuracy)
+  // required .MaxBotMessages.Stamp stamp = 1;
+  if (has_stamp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->stamp_, output);
+  }
+
+  // required .MaxBotMessages.Pose3 pose = 2;
+  if (has_pose()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *this->pose_, output);
+  }
+
+  // required double accuracy = 3;
+  if (has_accuracy()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->accuracy(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:MaxBotMessages.Pose3StampedWithAccuracy)
+}
+
+::google::protobuf::uint8* Pose3StampedWithAccuracy::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:MaxBotMessages.Pose3StampedWithAccuracy)
+  // required .MaxBotMessages.Stamp stamp = 1;
+  if (has_stamp()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->stamp_, target);
+  }
+
+  // required .MaxBotMessages.Pose3 pose = 2;
+  if (has_pose()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, *this->pose_, target);
+  }
+
+  // required double accuracy = 3;
+  if (has_accuracy()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->accuracy(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:MaxBotMessages.Pose3StampedWithAccuracy)
+  return target;
+}
+
+int Pose3StampedWithAccuracy::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_pose()) {
+    // required .MaxBotMessages.Pose3 pose = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->pose_);
+  }
+
+  if (has_accuracy()) {
+    // required double accuracy = 3;
+    total_size += 1 + 8;
+  }
+
+  return total_size;
+}
+int Pose3StampedWithAccuracy::ByteSize() const {
+  int total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+
+    // required .MaxBotMessages.Pose3 pose = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->pose_);
+
+    // required double accuracy = 3;
+    total_size += 1 + 8;
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Pose3StampedWithAccuracy::MergeFrom(const ::google::protobuf::Message& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Pose3StampedWithAccuracy* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Pose3StampedWithAccuracy>(
+          &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void Pose3StampedWithAccuracy::MergeFrom(const Pose3StampedWithAccuracy& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_stamp()) {
+      mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
+    }
+    if (from.has_pose()) {
+      mutable_pose()->::MaxBotMessages::Pose3::MergeFrom(from.pose());
+    }
+    if (from.has_accuracy()) {
+      set_accuracy(from.accuracy());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
+}
+
+void Pose3StampedWithAccuracy::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Pose3StampedWithAccuracy::CopyFrom(const Pose3StampedWithAccuracy& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Pose3StampedWithAccuracy::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+
+  if (has_stamp()) {
+    if (!this->stamp_->IsInitialized()) return false;
+  }
+  if (has_pose()) {
+    if (!this->pose_->IsInitialized()) return false;
+  }
+  return true;
+}
+
+void Pose3StampedWithAccuracy::Swap(Pose3StampedWithAccuracy* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Pose3StampedWithAccuracy::InternalSwap(Pose3StampedWithAccuracy* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(pose_, other->pose_);
+  std::swap(accuracy_, other->accuracy_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Pose3StampedWithAccuracy::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Pose3StampedWithAccuracy_descriptor_;
+  metadata.reflection = Pose3StampedWithAccuracy_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Pose3StampedWithAccuracy
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool Pose3StampedWithAccuracy::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Pose3StampedWithAccuracy::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Pose3StampedWithAccuracy::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Pose3StampedWithAccuracy::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& Pose3StampedWithAccuracy::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Pose3StampedWithAccuracy.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* Pose3StampedWithAccuracy::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Pose3StampedWithAccuracy.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* Pose3StampedWithAccuracy::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void Pose3StampedWithAccuracy::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Pose3StampedWithAccuracy.stamp)
+}
+
+// required .MaxBotMessages.Pose3 pose = 2;
+bool Pose3StampedWithAccuracy::has_pose() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Pose3StampedWithAccuracy::set_has_pose() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Pose3StampedWithAccuracy::clear_has_pose() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Pose3StampedWithAccuracy::clear_pose() {
+  if (pose_ != NULL) pose_->::MaxBotMessages::Pose3::Clear();
+  clear_has_pose();
+}
+const ::MaxBotMessages::Pose3& Pose3StampedWithAccuracy::pose() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Pose3StampedWithAccuracy.pose)
+  return pose_ != NULL ? *pose_ : *default_instance_->pose_;
+}
+::MaxBotMessages::Pose3* Pose3StampedWithAccuracy::mutable_pose() {
+  set_has_pose();
+  if (pose_ == NULL) {
+    pose_ = new ::MaxBotMessages::Pose3;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Pose3StampedWithAccuracy.pose)
+  return pose_;
+}
+::MaxBotMessages::Pose3* Pose3StampedWithAccuracy::release_pose() {
+  clear_has_pose();
+  ::MaxBotMessages::Pose3* temp = pose_;
+  pose_ = NULL;
+  return temp;
+}
+void Pose3StampedWithAccuracy::set_allocated_pose(::MaxBotMessages::Pose3* pose) {
+  delete pose_;
+  pose_ = pose;
+  if (pose) {
+    set_has_pose();
+  } else {
+    clear_has_pose();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Pose3StampedWithAccuracy.pose)
+}
+
+// required double accuracy = 3;
+bool Pose3StampedWithAccuracy::has_accuracy() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Pose3StampedWithAccuracy::set_has_accuracy() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Pose3StampedWithAccuracy::clear_has_accuracy() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Pose3StampedWithAccuracy::clear_accuracy() {
+  accuracy_ = 0;
+  clear_has_accuracy();
+}
+ double Pose3StampedWithAccuracy::accuracy() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Pose3StampedWithAccuracy.accuracy)
+  return accuracy_;
+}
+ void Pose3StampedWithAccuracy::set_accuracy(double value) {
+  set_has_accuracy();
+  accuracy_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Pose3StampedWithAccuracy.accuracy)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

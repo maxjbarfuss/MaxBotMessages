@@ -42,6 +42,7 @@ class Pose2;
 class Pose2Stamped;
 class Pose3;
 class Pose3Stamped;
+class Pose3StampedWithAccuracy;
 
 // ===================================================================
 
@@ -473,6 +474,122 @@ class Pose3Stamped : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static Pose3Stamped* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class Pose3StampedWithAccuracy : public ::google::protobuf::Message {
+ public:
+  Pose3StampedWithAccuracy();
+  virtual ~Pose3StampedWithAccuracy();
+
+  Pose3StampedWithAccuracy(const Pose3StampedWithAccuracy& from);
+
+  inline Pose3StampedWithAccuracy& operator=(const Pose3StampedWithAccuracy& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Pose3StampedWithAccuracy& default_instance();
+
+  void Swap(Pose3StampedWithAccuracy* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Pose3StampedWithAccuracy* New() const { return New(NULL); }
+
+  Pose3StampedWithAccuracy* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Pose3StampedWithAccuracy& from);
+  void MergeFrom(const Pose3StampedWithAccuracy& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Pose3StampedWithAccuracy* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .MaxBotMessages.Stamp stamp = 1;
+  bool has_stamp() const;
+  void clear_stamp();
+  static const int kStampFieldNumber = 1;
+  const ::MaxBotMessages::Stamp& stamp() const;
+  ::MaxBotMessages::Stamp* mutable_stamp();
+  ::MaxBotMessages::Stamp* release_stamp();
+  void set_allocated_stamp(::MaxBotMessages::Stamp* stamp);
+
+  // required .MaxBotMessages.Pose3 pose = 2;
+  bool has_pose() const;
+  void clear_pose();
+  static const int kPoseFieldNumber = 2;
+  const ::MaxBotMessages::Pose3& pose() const;
+  ::MaxBotMessages::Pose3* mutable_pose();
+  ::MaxBotMessages::Pose3* release_pose();
+  void set_allocated_pose(::MaxBotMessages::Pose3* pose);
+
+  // required double accuracy = 3;
+  bool has_accuracy() const;
+  void clear_accuracy();
+  static const int kAccuracyFieldNumber = 3;
+  double accuracy() const;
+  void set_accuracy(double value);
+
+  // @@protoc_insertion_point(class_scope:MaxBotMessages.Pose3StampedWithAccuracy)
+ private:
+  inline void set_has_stamp();
+  inline void clear_has_stamp();
+  inline void set_has_pose();
+  inline void clear_has_pose();
+  inline void set_has_accuracy();
+  inline void clear_has_accuracy();
+
+  // helper for ByteSize()
+  int RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::MaxBotMessages::Stamp* stamp_;
+  ::MaxBotMessages::Pose3* pose_;
+  double accuracy_;
+  friend void  protobuf_AddDesc_Pose_2eproto();
+  friend void protobuf_AssignDesc_Pose_2eproto();
+  friend void protobuf_ShutdownFile_Pose_2eproto();
+
+  void InitAsDefaultInstance();
+  static Pose3StampedWithAccuracy* default_instance_;
+};
 // ===================================================================
 
 
@@ -823,7 +940,123 @@ inline void Pose3Stamped::set_allocated_pose(::MaxBotMessages::Pose3* pose) {
   // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Pose3Stamped.pose)
 }
 
+// -------------------------------------------------------------------
+
+// Pose3StampedWithAccuracy
+
+// required .MaxBotMessages.Stamp stamp = 1;
+inline bool Pose3StampedWithAccuracy::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Pose3StampedWithAccuracy::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Pose3StampedWithAccuracy::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Pose3StampedWithAccuracy::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+inline const ::MaxBotMessages::Stamp& Pose3StampedWithAccuracy::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Pose3StampedWithAccuracy.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+inline ::MaxBotMessages::Stamp* Pose3StampedWithAccuracy::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Pose3StampedWithAccuracy.stamp)
+  return stamp_;
+}
+inline ::MaxBotMessages::Stamp* Pose3StampedWithAccuracy::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+inline void Pose3StampedWithAccuracy::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Pose3StampedWithAccuracy.stamp)
+}
+
+// required .MaxBotMessages.Pose3 pose = 2;
+inline bool Pose3StampedWithAccuracy::has_pose() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Pose3StampedWithAccuracy::set_has_pose() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Pose3StampedWithAccuracy::clear_has_pose() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Pose3StampedWithAccuracy::clear_pose() {
+  if (pose_ != NULL) pose_->::MaxBotMessages::Pose3::Clear();
+  clear_has_pose();
+}
+inline const ::MaxBotMessages::Pose3& Pose3StampedWithAccuracy::pose() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Pose3StampedWithAccuracy.pose)
+  return pose_ != NULL ? *pose_ : *default_instance_->pose_;
+}
+inline ::MaxBotMessages::Pose3* Pose3StampedWithAccuracy::mutable_pose() {
+  set_has_pose();
+  if (pose_ == NULL) {
+    pose_ = new ::MaxBotMessages::Pose3;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Pose3StampedWithAccuracy.pose)
+  return pose_;
+}
+inline ::MaxBotMessages::Pose3* Pose3StampedWithAccuracy::release_pose() {
+  clear_has_pose();
+  ::MaxBotMessages::Pose3* temp = pose_;
+  pose_ = NULL;
+  return temp;
+}
+inline void Pose3StampedWithAccuracy::set_allocated_pose(::MaxBotMessages::Pose3* pose) {
+  delete pose_;
+  pose_ = pose;
+  if (pose) {
+    set_has_pose();
+  } else {
+    clear_has_pose();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Pose3StampedWithAccuracy.pose)
+}
+
+// required double accuracy = 3;
+inline bool Pose3StampedWithAccuracy::has_accuracy() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Pose3StampedWithAccuracy::set_has_accuracy() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Pose3StampedWithAccuracy::clear_has_accuracy() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Pose3StampedWithAccuracy::clear_accuracy() {
+  accuracy_ = 0;
+  clear_has_accuracy();
+}
+inline double Pose3StampedWithAccuracy::accuracy() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Pose3StampedWithAccuracy.accuracy)
+  return accuracy_;
+}
+inline void Pose3StampedWithAccuracy::set_accuracy(double value) {
+  set_has_accuracy();
+  accuracy_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Pose3StampedWithAccuracy.accuracy)
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

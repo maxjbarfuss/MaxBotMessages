@@ -30,9 +30,15 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* Vector3Stamped_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Vector3Stamped_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Vector3StampedWithAccuracy_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Vector3StampedWithAccuracy_reflection_ = NULL;
 const ::google::protobuf::Descriptor* QuaternionStamped_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   QuaternionStamped_reflection_ = NULL;
+const ::google::protobuf::Descriptor* QuaternionStampedWithAccuracy_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  QuaternionStampedWithAccuracy_reflection_ = NULL;
 
 }  // namespace
 
@@ -94,7 +100,24 @@ void protobuf_AssignDesc_Vector_2eproto() {
       sizeof(Vector3Stamped),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3Stamped, _internal_metadata_),
       -1);
-  QuaternionStamped_descriptor_ = file->message_type(3);
+  Vector3StampedWithAccuracy_descriptor_ = file->message_type(3);
+  static const int Vector3StampedWithAccuracy_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3StampedWithAccuracy, stamp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3StampedWithAccuracy, vector_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3StampedWithAccuracy, accuracy_),
+  };
+  Vector3StampedWithAccuracy_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Vector3StampedWithAccuracy_descriptor_,
+      Vector3StampedWithAccuracy::default_instance_,
+      Vector3StampedWithAccuracy_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3StampedWithAccuracy, _has_bits_[0]),
+      -1,
+      -1,
+      sizeof(Vector3StampedWithAccuracy),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector3StampedWithAccuracy, _internal_metadata_),
+      -1);
+  QuaternionStamped_descriptor_ = file->message_type(4);
   static const int QuaternionStamped_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStamped, stamp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStamped, quaternion_),
@@ -109,6 +132,23 @@ void protobuf_AssignDesc_Vector_2eproto() {
       -1,
       sizeof(QuaternionStamped),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStamped, _internal_metadata_),
+      -1);
+  QuaternionStampedWithAccuracy_descriptor_ = file->message_type(5);
+  static const int QuaternionStampedWithAccuracy_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStampedWithAccuracy, stamp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStampedWithAccuracy, quaternion_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStampedWithAccuracy, accuracy_),
+  };
+  QuaternionStampedWithAccuracy_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      QuaternionStampedWithAccuracy_descriptor_,
+      QuaternionStampedWithAccuracy::default_instance_,
+      QuaternionStampedWithAccuracy_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStampedWithAccuracy, _has_bits_[0]),
+      -1,
+      -1,
+      sizeof(QuaternionStampedWithAccuracy),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuaternionStampedWithAccuracy, _internal_metadata_),
       -1);
 }
 
@@ -129,7 +169,11 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Vector3Stamped_descriptor_, &Vector3Stamped::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Vector3StampedWithAccuracy_descriptor_, &Vector3StampedWithAccuracy::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       QuaternionStamped_descriptor_, &QuaternionStamped::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      QuaternionStampedWithAccuracy_descriptor_, &QuaternionStampedWithAccuracy::default_instance());
 }
 
 }  // namespace
@@ -141,8 +185,12 @@ void protobuf_ShutdownFile_Vector_2eproto() {
   delete Quaternion_reflection_;
   delete Vector3Stamped::default_instance_;
   delete Vector3Stamped_reflection_;
+  delete Vector3StampedWithAccuracy::default_instance_;
+  delete Vector3StampedWithAccuracy_reflection_;
   delete QuaternionStamped::default_instance_;
   delete QuaternionStamped_reflection_;
+  delete QuaternionStampedWithAccuracy::default_instance_;
+  delete QuaternionStampedWithAccuracy_reflection_;
 }
 
 void protobuf_AddDesc_Vector_2eproto() {
@@ -159,19 +207,30 @@ void protobuf_AddDesc_Vector_2eproto() {
     "\002(\001\022\t\n\001y\030\003 \002(\001\022\t\n\001z\030\004 \002(\001\"_\n\016Vector3Stam"
     "ped\022$\n\005stamp\030\001 \002(\0132\025.MaxBotMessages.Stam"
     "p\022\'\n\006vector\030\002 \002(\0132\027.MaxBotMessages.Vecto"
-    "r3\"i\n\021QuaternionStamped\022$\n\005stamp\030\001 \002(\0132\025"
-    ".MaxBotMessages.Stamp\022.\n\nquaternion\030\002 \002("
-    "\0132\032.MaxBotMessages.Quaternion", 349);
+    "r3\"}\n\032Vector3StampedWithAccuracy\022$\n\005stam"
+    "p\030\001 \002(\0132\025.MaxBotMessages.Stamp\022\'\n\006vector"
+    "\030\002 \002(\0132\027.MaxBotMessages.Vector3\022\020\n\010accur"
+    "acy\030\003 \002(\001\"i\n\021QuaternionStamped\022$\n\005stamp\030"
+    "\001 \002(\0132\025.MaxBotMessages.Stamp\022.\n\nquaterni"
+    "on\030\002 \002(\0132\032.MaxBotMessages.Quaternion\"\207\001\n"
+    "\035QuaternionStampedWithAccuracy\022$\n\005stamp\030"
+    "\001 \002(\0132\025.MaxBotMessages.Stamp\022.\n\nquaterni"
+    "on\030\002 \002(\0132\032.MaxBotMessages.Quaternion\022\020\n\010"
+    "accuracy\030\003 \002(\001", 614);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Vector.proto", &protobuf_RegisterTypes);
   Vector3::default_instance_ = new Vector3();
   Quaternion::default_instance_ = new Quaternion();
   Vector3Stamped::default_instance_ = new Vector3Stamped();
+  Vector3StampedWithAccuracy::default_instance_ = new Vector3StampedWithAccuracy();
   QuaternionStamped::default_instance_ = new QuaternionStamped();
+  QuaternionStampedWithAccuracy::default_instance_ = new QuaternionStampedWithAccuracy();
   Vector3::default_instance_->InitAsDefaultInstance();
   Quaternion::default_instance_->InitAsDefaultInstance();
   Vector3Stamped::default_instance_->InitAsDefaultInstance();
+  Vector3StampedWithAccuracy::default_instance_->InitAsDefaultInstance();
   QuaternionStamped::default_instance_->InitAsDefaultInstance();
+  QuaternionStampedWithAccuracy::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_Vector_2eproto);
 }
 
@@ -1472,6 +1531,468 @@ void Vector3Stamped::set_allocated_vector(::MaxBotMessages::Vector3* vector) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Vector3StampedWithAccuracy::kStampFieldNumber;
+const int Vector3StampedWithAccuracy::kVectorFieldNumber;
+const int Vector3StampedWithAccuracy::kAccuracyFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Vector3StampedWithAccuracy::Vector3StampedWithAccuracy()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:MaxBotMessages.Vector3StampedWithAccuracy)
+}
+
+void Vector3StampedWithAccuracy::InitAsDefaultInstance() {
+  stamp_ = const_cast< ::MaxBotMessages::Stamp*>(&::MaxBotMessages::Stamp::default_instance());
+  vector_ = const_cast< ::MaxBotMessages::Vector3*>(&::MaxBotMessages::Vector3::default_instance());
+}
+
+Vector3StampedWithAccuracy::Vector3StampedWithAccuracy(const Vector3StampedWithAccuracy& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:MaxBotMessages.Vector3StampedWithAccuracy)
+}
+
+void Vector3StampedWithAccuracy::SharedCtor() {
+  _cached_size_ = 0;
+  stamp_ = NULL;
+  vector_ = NULL;
+  accuracy_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+Vector3StampedWithAccuracy::~Vector3StampedWithAccuracy() {
+  // @@protoc_insertion_point(destructor:MaxBotMessages.Vector3StampedWithAccuracy)
+  SharedDtor();
+}
+
+void Vector3StampedWithAccuracy::SharedDtor() {
+  if (this != default_instance_) {
+    delete stamp_;
+    delete vector_;
+  }
+}
+
+void Vector3StampedWithAccuracy::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Vector3StampedWithAccuracy::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Vector3StampedWithAccuracy_descriptor_;
+}
+
+const Vector3StampedWithAccuracy& Vector3StampedWithAccuracy::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Vector_2eproto();
+  return *default_instance_;
+}
+
+Vector3StampedWithAccuracy* Vector3StampedWithAccuracy::default_instance_ = NULL;
+
+Vector3StampedWithAccuracy* Vector3StampedWithAccuracy::New(::google::protobuf::Arena* arena) const {
+  Vector3StampedWithAccuracy* n = new Vector3StampedWithAccuracy;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Vector3StampedWithAccuracy::Clear() {
+  if (_has_bits_[0 / 32] & 7u) {
+    if (has_stamp()) {
+      if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+    }
+    if (has_vector()) {
+      if (vector_ != NULL) vector_->::MaxBotMessages::Vector3::Clear();
+    }
+    accuracy_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool Vector3StampedWithAccuracy::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:MaxBotMessages.Vector3StampedWithAccuracy)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .MaxBotMessages.Stamp stamp = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_stamp()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_vector;
+        break;
+      }
+
+      // required .MaxBotMessages.Vector3 vector = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_vector:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_vector()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(25)) goto parse_accuracy;
+        break;
+      }
+
+      // required double accuracy = 3;
+      case 3: {
+        if (tag == 25) {
+         parse_accuracy:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &accuracy_)));
+          set_has_accuracy();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:MaxBotMessages.Vector3StampedWithAccuracy)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:MaxBotMessages.Vector3StampedWithAccuracy)
+  return false;
+#undef DO_
+}
+
+void Vector3StampedWithAccuracy::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:MaxBotMessages.Vector3StampedWithAccuracy)
+  // required .MaxBotMessages.Stamp stamp = 1;
+  if (has_stamp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->stamp_, output);
+  }
+
+  // required .MaxBotMessages.Vector3 vector = 2;
+  if (has_vector()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *this->vector_, output);
+  }
+
+  // required double accuracy = 3;
+  if (has_accuracy()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->accuracy(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:MaxBotMessages.Vector3StampedWithAccuracy)
+}
+
+::google::protobuf::uint8* Vector3StampedWithAccuracy::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:MaxBotMessages.Vector3StampedWithAccuracy)
+  // required .MaxBotMessages.Stamp stamp = 1;
+  if (has_stamp()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->stamp_, target);
+  }
+
+  // required .MaxBotMessages.Vector3 vector = 2;
+  if (has_vector()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, *this->vector_, target);
+  }
+
+  // required double accuracy = 3;
+  if (has_accuracy()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->accuracy(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:MaxBotMessages.Vector3StampedWithAccuracy)
+  return target;
+}
+
+int Vector3StampedWithAccuracy::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_vector()) {
+    // required .MaxBotMessages.Vector3 vector = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->vector_);
+  }
+
+  if (has_accuracy()) {
+    // required double accuracy = 3;
+    total_size += 1 + 8;
+  }
+
+  return total_size;
+}
+int Vector3StampedWithAccuracy::ByteSize() const {
+  int total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+
+    // required .MaxBotMessages.Vector3 vector = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->vector_);
+
+    // required double accuracy = 3;
+    total_size += 1 + 8;
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Vector3StampedWithAccuracy::MergeFrom(const ::google::protobuf::Message& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Vector3StampedWithAccuracy* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Vector3StampedWithAccuracy>(
+          &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void Vector3StampedWithAccuracy::MergeFrom(const Vector3StampedWithAccuracy& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_stamp()) {
+      mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
+    }
+    if (from.has_vector()) {
+      mutable_vector()->::MaxBotMessages::Vector3::MergeFrom(from.vector());
+    }
+    if (from.has_accuracy()) {
+      set_accuracy(from.accuracy());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
+}
+
+void Vector3StampedWithAccuracy::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Vector3StampedWithAccuracy::CopyFrom(const Vector3StampedWithAccuracy& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Vector3StampedWithAccuracy::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+
+  if (has_stamp()) {
+    if (!this->stamp_->IsInitialized()) return false;
+  }
+  if (has_vector()) {
+    if (!this->vector_->IsInitialized()) return false;
+  }
+  return true;
+}
+
+void Vector3StampedWithAccuracy::Swap(Vector3StampedWithAccuracy* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Vector3StampedWithAccuracy::InternalSwap(Vector3StampedWithAccuracy* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(vector_, other->vector_);
+  std::swap(accuracy_, other->accuracy_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Vector3StampedWithAccuracy::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Vector3StampedWithAccuracy_descriptor_;
+  metadata.reflection = Vector3StampedWithAccuracy_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Vector3StampedWithAccuracy
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool Vector3StampedWithAccuracy::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Vector3StampedWithAccuracy::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Vector3StampedWithAccuracy::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Vector3StampedWithAccuracy::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& Vector3StampedWithAccuracy::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Vector3StampedWithAccuracy.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* Vector3StampedWithAccuracy::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Vector3StampedWithAccuracy.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* Vector3StampedWithAccuracy::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void Vector3StampedWithAccuracy::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Vector3StampedWithAccuracy.stamp)
+}
+
+// required .MaxBotMessages.Vector3 vector = 2;
+bool Vector3StampedWithAccuracy::has_vector() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Vector3StampedWithAccuracy::set_has_vector() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Vector3StampedWithAccuracy::clear_has_vector() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Vector3StampedWithAccuracy::clear_vector() {
+  if (vector_ != NULL) vector_->::MaxBotMessages::Vector3::Clear();
+  clear_has_vector();
+}
+const ::MaxBotMessages::Vector3& Vector3StampedWithAccuracy::vector() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Vector3StampedWithAccuracy.vector)
+  return vector_ != NULL ? *vector_ : *default_instance_->vector_;
+}
+::MaxBotMessages::Vector3* Vector3StampedWithAccuracy::mutable_vector() {
+  set_has_vector();
+  if (vector_ == NULL) {
+    vector_ = new ::MaxBotMessages::Vector3;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.Vector3StampedWithAccuracy.vector)
+  return vector_;
+}
+::MaxBotMessages::Vector3* Vector3StampedWithAccuracy::release_vector() {
+  clear_has_vector();
+  ::MaxBotMessages::Vector3* temp = vector_;
+  vector_ = NULL;
+  return temp;
+}
+void Vector3StampedWithAccuracy::set_allocated_vector(::MaxBotMessages::Vector3* vector) {
+  delete vector_;
+  vector_ = vector;
+  if (vector) {
+    set_has_vector();
+  } else {
+    clear_has_vector();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Vector3StampedWithAccuracy.vector)
+}
+
+// required double accuracy = 3;
+bool Vector3StampedWithAccuracy::has_accuracy() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Vector3StampedWithAccuracy::set_has_accuracy() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Vector3StampedWithAccuracy::clear_has_accuracy() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Vector3StampedWithAccuracy::clear_accuracy() {
+  accuracy_ = 0;
+  clear_has_accuracy();
+}
+ double Vector3StampedWithAccuracy::accuracy() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Vector3StampedWithAccuracy.accuracy)
+  return accuracy_;
+}
+ void Vector3StampedWithAccuracy::set_accuracy(double value) {
+  set_has_accuracy();
+  accuracy_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Vector3StampedWithAccuracy.accuracy)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int QuaternionStamped::kStampFieldNumber;
 const int QuaternionStamped::kQuaternionFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -1863,6 +2384,468 @@ void QuaternionStamped::set_allocated_quaternion(::MaxBotMessages::Quaternion* q
     clear_has_quaternion();
   }
   // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.QuaternionStamped.quaternion)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int QuaternionStampedWithAccuracy::kStampFieldNumber;
+const int QuaternionStampedWithAccuracy::kQuaternionFieldNumber;
+const int QuaternionStampedWithAccuracy::kAccuracyFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+QuaternionStampedWithAccuracy::QuaternionStampedWithAccuracy()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:MaxBotMessages.QuaternionStampedWithAccuracy)
+}
+
+void QuaternionStampedWithAccuracy::InitAsDefaultInstance() {
+  stamp_ = const_cast< ::MaxBotMessages::Stamp*>(&::MaxBotMessages::Stamp::default_instance());
+  quaternion_ = const_cast< ::MaxBotMessages::Quaternion*>(&::MaxBotMessages::Quaternion::default_instance());
+}
+
+QuaternionStampedWithAccuracy::QuaternionStampedWithAccuracy(const QuaternionStampedWithAccuracy& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:MaxBotMessages.QuaternionStampedWithAccuracy)
+}
+
+void QuaternionStampedWithAccuracy::SharedCtor() {
+  _cached_size_ = 0;
+  stamp_ = NULL;
+  quaternion_ = NULL;
+  accuracy_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+QuaternionStampedWithAccuracy::~QuaternionStampedWithAccuracy() {
+  // @@protoc_insertion_point(destructor:MaxBotMessages.QuaternionStampedWithAccuracy)
+  SharedDtor();
+}
+
+void QuaternionStampedWithAccuracy::SharedDtor() {
+  if (this != default_instance_) {
+    delete stamp_;
+    delete quaternion_;
+  }
+}
+
+void QuaternionStampedWithAccuracy::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* QuaternionStampedWithAccuracy::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return QuaternionStampedWithAccuracy_descriptor_;
+}
+
+const QuaternionStampedWithAccuracy& QuaternionStampedWithAccuracy::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_Vector_2eproto();
+  return *default_instance_;
+}
+
+QuaternionStampedWithAccuracy* QuaternionStampedWithAccuracy::default_instance_ = NULL;
+
+QuaternionStampedWithAccuracy* QuaternionStampedWithAccuracy::New(::google::protobuf::Arena* arena) const {
+  QuaternionStampedWithAccuracy* n = new QuaternionStampedWithAccuracy;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void QuaternionStampedWithAccuracy::Clear() {
+  if (_has_bits_[0 / 32] & 7u) {
+    if (has_stamp()) {
+      if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+    }
+    if (has_quaternion()) {
+      if (quaternion_ != NULL) quaternion_->::MaxBotMessages::Quaternion::Clear();
+    }
+    accuracy_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool QuaternionStampedWithAccuracy::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:MaxBotMessages.QuaternionStampedWithAccuracy)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .MaxBotMessages.Stamp stamp = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_stamp()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_quaternion;
+        break;
+      }
+
+      // required .MaxBotMessages.Quaternion quaternion = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_quaternion:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_quaternion()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(25)) goto parse_accuracy;
+        break;
+      }
+
+      // required double accuracy = 3;
+      case 3: {
+        if (tag == 25) {
+         parse_accuracy:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &accuracy_)));
+          set_has_accuracy();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:MaxBotMessages.QuaternionStampedWithAccuracy)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:MaxBotMessages.QuaternionStampedWithAccuracy)
+  return false;
+#undef DO_
+}
+
+void QuaternionStampedWithAccuracy::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:MaxBotMessages.QuaternionStampedWithAccuracy)
+  // required .MaxBotMessages.Stamp stamp = 1;
+  if (has_stamp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->stamp_, output);
+  }
+
+  // required .MaxBotMessages.Quaternion quaternion = 2;
+  if (has_quaternion()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *this->quaternion_, output);
+  }
+
+  // required double accuracy = 3;
+  if (has_accuracy()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->accuracy(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:MaxBotMessages.QuaternionStampedWithAccuracy)
+}
+
+::google::protobuf::uint8* QuaternionStampedWithAccuracy::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:MaxBotMessages.QuaternionStampedWithAccuracy)
+  // required .MaxBotMessages.Stamp stamp = 1;
+  if (has_stamp()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, *this->stamp_, target);
+  }
+
+  // required .MaxBotMessages.Quaternion quaternion = 2;
+  if (has_quaternion()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, *this->quaternion_, target);
+  }
+
+  // required double accuracy = 3;
+  if (has_accuracy()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->accuracy(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:MaxBotMessages.QuaternionStampedWithAccuracy)
+  return target;
+}
+
+int QuaternionStampedWithAccuracy::RequiredFieldsByteSizeFallback() const {
+  int total_size = 0;
+
+  if (has_stamp()) {
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+  }
+
+  if (has_quaternion()) {
+    // required .MaxBotMessages.Quaternion quaternion = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->quaternion_);
+  }
+
+  if (has_accuracy()) {
+    // required double accuracy = 3;
+    total_size += 1 + 8;
+  }
+
+  return total_size;
+}
+int QuaternionStampedWithAccuracy::ByteSize() const {
+  int total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
+    // required .MaxBotMessages.Stamp stamp = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->stamp_);
+
+    // required .MaxBotMessages.Quaternion quaternion = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->quaternion_);
+
+    // required double accuracy = 3;
+    total_size += 1 + 8;
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void QuaternionStampedWithAccuracy::MergeFrom(const ::google::protobuf::Message& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const QuaternionStampedWithAccuracy* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const QuaternionStampedWithAccuracy>(
+          &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void QuaternionStampedWithAccuracy::MergeFrom(const QuaternionStampedWithAccuracy& from) {
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_stamp()) {
+      mutable_stamp()->::MaxBotMessages::Stamp::MergeFrom(from.stamp());
+    }
+    if (from.has_quaternion()) {
+      mutable_quaternion()->::MaxBotMessages::Quaternion::MergeFrom(from.quaternion());
+    }
+    if (from.has_accuracy()) {
+      set_accuracy(from.accuracy());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
+}
+
+void QuaternionStampedWithAccuracy::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void QuaternionStampedWithAccuracy::CopyFrom(const QuaternionStampedWithAccuracy& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool QuaternionStampedWithAccuracy::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+
+  if (has_stamp()) {
+    if (!this->stamp_->IsInitialized()) return false;
+  }
+  if (has_quaternion()) {
+    if (!this->quaternion_->IsInitialized()) return false;
+  }
+  return true;
+}
+
+void QuaternionStampedWithAccuracy::Swap(QuaternionStampedWithAccuracy* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void QuaternionStampedWithAccuracy::InternalSwap(QuaternionStampedWithAccuracy* other) {
+  std::swap(stamp_, other->stamp_);
+  std::swap(quaternion_, other->quaternion_);
+  std::swap(accuracy_, other->accuracy_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata QuaternionStampedWithAccuracy::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = QuaternionStampedWithAccuracy_descriptor_;
+  metadata.reflection = QuaternionStampedWithAccuracy_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// QuaternionStampedWithAccuracy
+
+// required .MaxBotMessages.Stamp stamp = 1;
+bool QuaternionStampedWithAccuracy::has_stamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void QuaternionStampedWithAccuracy::set_has_stamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void QuaternionStampedWithAccuracy::clear_has_stamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void QuaternionStampedWithAccuracy::clear_stamp() {
+  if (stamp_ != NULL) stamp_->::MaxBotMessages::Stamp::Clear();
+  clear_has_stamp();
+}
+const ::MaxBotMessages::Stamp& QuaternionStampedWithAccuracy::stamp() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.QuaternionStampedWithAccuracy.stamp)
+  return stamp_ != NULL ? *stamp_ : *default_instance_->stamp_;
+}
+::MaxBotMessages::Stamp* QuaternionStampedWithAccuracy::mutable_stamp() {
+  set_has_stamp();
+  if (stamp_ == NULL) {
+    stamp_ = new ::MaxBotMessages::Stamp;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.QuaternionStampedWithAccuracy.stamp)
+  return stamp_;
+}
+::MaxBotMessages::Stamp* QuaternionStampedWithAccuracy::release_stamp() {
+  clear_has_stamp();
+  ::MaxBotMessages::Stamp* temp = stamp_;
+  stamp_ = NULL;
+  return temp;
+}
+void QuaternionStampedWithAccuracy::set_allocated_stamp(::MaxBotMessages::Stamp* stamp) {
+  delete stamp_;
+  stamp_ = stamp;
+  if (stamp) {
+    set_has_stamp();
+  } else {
+    clear_has_stamp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.QuaternionStampedWithAccuracy.stamp)
+}
+
+// required .MaxBotMessages.Quaternion quaternion = 2;
+bool QuaternionStampedWithAccuracy::has_quaternion() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void QuaternionStampedWithAccuracy::set_has_quaternion() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void QuaternionStampedWithAccuracy::clear_has_quaternion() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void QuaternionStampedWithAccuracy::clear_quaternion() {
+  if (quaternion_ != NULL) quaternion_->::MaxBotMessages::Quaternion::Clear();
+  clear_has_quaternion();
+}
+const ::MaxBotMessages::Quaternion& QuaternionStampedWithAccuracy::quaternion() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.QuaternionStampedWithAccuracy.quaternion)
+  return quaternion_ != NULL ? *quaternion_ : *default_instance_->quaternion_;
+}
+::MaxBotMessages::Quaternion* QuaternionStampedWithAccuracy::mutable_quaternion() {
+  set_has_quaternion();
+  if (quaternion_ == NULL) {
+    quaternion_ = new ::MaxBotMessages::Quaternion;
+  }
+  // @@protoc_insertion_point(field_mutable:MaxBotMessages.QuaternionStampedWithAccuracy.quaternion)
+  return quaternion_;
+}
+::MaxBotMessages::Quaternion* QuaternionStampedWithAccuracy::release_quaternion() {
+  clear_has_quaternion();
+  ::MaxBotMessages::Quaternion* temp = quaternion_;
+  quaternion_ = NULL;
+  return temp;
+}
+void QuaternionStampedWithAccuracy::set_allocated_quaternion(::MaxBotMessages::Quaternion* quaternion) {
+  delete quaternion_;
+  quaternion_ = quaternion;
+  if (quaternion) {
+    set_has_quaternion();
+  } else {
+    clear_has_quaternion();
+  }
+  // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.QuaternionStampedWithAccuracy.quaternion)
+}
+
+// required double accuracy = 3;
+bool QuaternionStampedWithAccuracy::has_accuracy() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void QuaternionStampedWithAccuracy::set_has_accuracy() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void QuaternionStampedWithAccuracy::clear_has_accuracy() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void QuaternionStampedWithAccuracy::clear_accuracy() {
+  accuracy_ = 0;
+  clear_has_accuracy();
+}
+ double QuaternionStampedWithAccuracy::accuracy() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.QuaternionStampedWithAccuracy.accuracy)
+  return accuracy_;
+}
+ void QuaternionStampedWithAccuracy::set_accuracy(double value) {
+  set_has_accuracy();
+  accuracy_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.QuaternionStampedWithAccuracy.accuracy)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

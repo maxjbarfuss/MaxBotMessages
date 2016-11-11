@@ -24,6 +24,7 @@ namespace {
 const ::google::protobuf::Descriptor* Stamp_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Stamp_reflection_ = NULL;
+const ::google::protobuf::EnumDescriptor* MeasurementType_descriptor_ = NULL;
 
 }  // namespace
 
@@ -35,9 +36,10 @@ void protobuf_AssignDesc_Stamp_2eproto() {
       "Stamp.proto");
   GOOGLE_CHECK(file != NULL);
   Stamp_descriptor_ = file->message_type(0);
-  static const int Stamp_offsets_[2] = {
+  static const int Stamp_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, component_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, microseconds_since_epoch_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, time_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, measurement_type_),
   };
   Stamp_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -50,6 +52,7 @@ void protobuf_AssignDesc_Stamp_2eproto() {
       sizeof(Stamp),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Stamp, _internal_metadata_),
       -1);
+  MeasurementType_descriptor_ = file->enum_type(0);
 }
 
 namespace {
@@ -80,9 +83,11 @@ void protobuf_AddDesc_Stamp_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\013Stamp.proto\022\016MaxBotMessages\"\?\n\005Stamp\022\024"
-    "\n\014component_id\030\001 \002(\t\022 \n\030microseconds_sin"
-    "ce_epoch\030\002 \002(\003", 94);
+    "\n\013Stamp.proto\022\016MaxBotMessages\"p\n\005Stamp\022\024"
+    "\n\014component_id\030\001 \002(\t\022\014\n\004time\030\002 \002(\003\022C\n\020me"
+    "asurement_type\030\003 \001(\0162\037.MaxBotMessages.Me"
+    "asurementType:\010ABSOLUTE*1\n\017MeasurementTy"
+    "pe\022\014\n\010ABSOLUTE\020\000\022\020\n\014DIFFERENTIAL\020\001", 194);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Stamp.proto", &protobuf_RegisterTypes);
   Stamp::default_instance_ = new Stamp();
@@ -96,6 +101,20 @@ struct StaticDescriptorInitializer_Stamp_2eproto {
     protobuf_AddDesc_Stamp_2eproto();
   }
 } static_descriptor_initializer_Stamp_2eproto_;
+const ::google::protobuf::EnumDescriptor* MeasurementType_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return MeasurementType_descriptor_;
+}
+bool MeasurementType_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 namespace {
 
@@ -111,7 +130,8 @@ static void MergeFromFail(int line) {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Stamp::kComponentIdFieldNumber;
-const int Stamp::kMicrosecondsSinceEpochFieldNumber;
+const int Stamp::kTimeFieldNumber;
+const int Stamp::kMeasurementTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Stamp::Stamp()
@@ -135,7 +155,8 @@ void Stamp::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   component_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  microseconds_since_epoch_ = GOOGLE_LONGLONG(0);
+  time_ = GOOGLE_LONGLONG(0);
+  measurement_type_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -176,12 +197,24 @@ Stamp* Stamp::New(::google::protobuf::Arena* arena) const {
 }
 
 void Stamp::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Stamp*>(16)->f)
+
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  if (_has_bits_[0 / 32] & 7u) {
+    ZR_(time_, measurement_type_);
     if (has_component_id()) {
       component_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
-    microseconds_since_epoch_ = GOOGLE_LONGLONG(0);
   }
+
+#undef ZR_HELPER_
+#undef ZR_
+
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   if (_internal_metadata_.have_unknown_fields()) {
     mutable_unknown_fields()->Clear();
@@ -210,18 +243,38 @@ bool Stamp::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(16)) goto parse_microseconds_since_epoch;
+        if (input->ExpectTag(16)) goto parse_time;
         break;
       }
 
-      // required int64 microseconds_since_epoch = 2;
+      // required int64 time = 2;
       case 2: {
         if (tag == 16) {
-         parse_microseconds_since_epoch:
+         parse_time:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 input, &microseconds_since_epoch_)));
-          set_has_microseconds_since_epoch();
+                 input, &time_)));
+          set_has_time();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_measurement_type;
+        break;
+      }
+
+      // optional .MaxBotMessages.MeasurementType measurement_type = 3 [default = ABSOLUTE];
+      case 3: {
+        if (tag == 24) {
+         parse_measurement_type:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::MaxBotMessages::MeasurementType_IsValid(value)) {
+            set_measurement_type(static_cast< ::MaxBotMessages::MeasurementType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(3, value);
+          }
         } else {
           goto handle_unusual;
         }
@@ -264,9 +317,15 @@ void Stamp::SerializeWithCachedSizes(
       1, this->component_id(), output);
   }
 
-  // required int64 microseconds_since_epoch = 2;
-  if (has_microseconds_since_epoch()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->microseconds_since_epoch(), output);
+  // required int64 time = 2;
+  if (has_time()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->time(), output);
+  }
+
+  // optional .MaxBotMessages.MeasurementType measurement_type = 3 [default = ABSOLUTE];
+  if (has_measurement_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->measurement_type(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -290,9 +349,15 @@ void Stamp::SerializeWithCachedSizes(
         1, this->component_id(), target);
   }
 
-  // required int64 microseconds_since_epoch = 2;
-  if (has_microseconds_since_epoch()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->microseconds_since_epoch(), target);
+  // required int64 time = 2;
+  if (has_time()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->time(), target);
+  }
+
+  // optional .MaxBotMessages.MeasurementType measurement_type = 3 [default = ABSOLUTE];
+  if (has_measurement_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->measurement_type(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -313,11 +378,11 @@ int Stamp::RequiredFieldsByteSizeFallback() const {
         this->component_id());
   }
 
-  if (has_microseconds_since_epoch()) {
-    // required int64 microseconds_since_epoch = 2;
+  if (has_time()) {
+    // required int64 time = 2;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
-        this->microseconds_since_epoch());
+        this->time());
   }
 
   return total_size;
@@ -331,14 +396,20 @@ int Stamp::ByteSize() const {
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->component_id());
 
-    // required int64 microseconds_since_epoch = 2;
+    // required int64 time = 2;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
-        this->microseconds_since_epoch());
+        this->time());
 
   } else {
     total_size += RequiredFieldsByteSizeFallback();
   }
+  // optional .MaxBotMessages.MeasurementType measurement_type = 3 [default = ABSOLUTE];
+  if (has_measurement_type()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->measurement_type());
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -369,8 +440,11 @@ void Stamp::MergeFrom(const Stamp& from) {
       set_has_component_id();
       component_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.component_id_);
     }
-    if (from.has_microseconds_since_epoch()) {
-      set_microseconds_since_epoch(from.microseconds_since_epoch());
+    if (from.has_time()) {
+      set_time(from.time());
+    }
+    if (from.has_measurement_type()) {
+      set_measurement_type(from.measurement_type());
     }
   }
   if (from._internal_metadata_.have_unknown_fields()) {
@@ -402,7 +476,8 @@ void Stamp::Swap(Stamp* other) {
 }
 void Stamp::InternalSwap(Stamp* other) {
   component_id_.Swap(&other->component_id_);
-  std::swap(microseconds_since_epoch_, other->microseconds_since_epoch_);
+  std::swap(time_, other->time_);
+  std::swap(measurement_type_, other->measurement_type_);
   std::swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -472,28 +547,53 @@ void Stamp::clear_component_id() {
   // @@protoc_insertion_point(field_set_allocated:MaxBotMessages.Stamp.component_id)
 }
 
-// required int64 microseconds_since_epoch = 2;
-bool Stamp::has_microseconds_since_epoch() const {
+// required int64 time = 2;
+bool Stamp::has_time() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-void Stamp::set_has_microseconds_since_epoch() {
+void Stamp::set_has_time() {
   _has_bits_[0] |= 0x00000002u;
 }
-void Stamp::clear_has_microseconds_since_epoch() {
+void Stamp::clear_has_time() {
   _has_bits_[0] &= ~0x00000002u;
 }
-void Stamp::clear_microseconds_since_epoch() {
-  microseconds_since_epoch_ = GOOGLE_LONGLONG(0);
-  clear_has_microseconds_since_epoch();
+void Stamp::clear_time() {
+  time_ = GOOGLE_LONGLONG(0);
+  clear_has_time();
 }
- ::google::protobuf::int64 Stamp::microseconds_since_epoch() const {
-  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.microseconds_since_epoch)
-  return microseconds_since_epoch_;
+ ::google::protobuf::int64 Stamp::time() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.time)
+  return time_;
 }
- void Stamp::set_microseconds_since_epoch(::google::protobuf::int64 value) {
-  set_has_microseconds_since_epoch();
-  microseconds_since_epoch_ = value;
-  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.microseconds_since_epoch)
+ void Stamp::set_time(::google::protobuf::int64 value) {
+  set_has_time();
+  time_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.time)
+}
+
+// optional .MaxBotMessages.MeasurementType measurement_type = 3 [default = ABSOLUTE];
+bool Stamp::has_measurement_type() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Stamp::set_has_measurement_type() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Stamp::clear_has_measurement_type() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Stamp::clear_measurement_type() {
+  measurement_type_ = 0;
+  clear_has_measurement_type();
+}
+ ::MaxBotMessages::MeasurementType Stamp::measurement_type() const {
+  // @@protoc_insertion_point(field_get:MaxBotMessages.Stamp.measurement_type)
+  return static_cast< ::MaxBotMessages::MeasurementType >(measurement_type_);
+}
+ void Stamp::set_measurement_type(::MaxBotMessages::MeasurementType value) {
+  assert(::MaxBotMessages::MeasurementType_IsValid(value));
+  set_has_measurement_type();
+  measurement_type_ = value;
+  // @@protoc_insertion_point(field_set:MaxBotMessages.Stamp.measurement_type)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

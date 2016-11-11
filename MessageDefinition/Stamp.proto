@@ -1,6 +1,12 @@
 package MaxBotMessages;
 
+enum MeasurementType {
+    ABSOLUTE = 0;
+    DIFFERENTIAL = 1;
+}
+
 message Stamp {
     required string component_id = 1;
-    required int64 microseconds_since_epoch = 2;
+    required int64 time = 2;
+    optional MeasurementType measurement_type = 3 [default = ABSOLUTE];
 }

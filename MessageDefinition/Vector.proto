@@ -20,7 +20,19 @@ message Vector3Stamped {
     required Vector3 vector = 2;
 }
 
+message Vector3StampedWithAccuracy {
+    required Stamp stamp = 1;
+    required Vector3 vector = 2;
+    required double accuracy = 3;
+}
+
 message QuaternionStamped {
     required Stamp stamp = 1;
     required Quaternion quaternion = 2;
+}
+
+message QuaternionStampedWithAccuracy {
+    required Stamp stamp = 1;
+    required Quaternion quaternion = 2;
+    required double accuracy = 3;
 }
